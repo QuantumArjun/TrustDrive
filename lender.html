@@ -51,7 +51,30 @@ function closeNav() {
             <span class="close">&times;</span>
                 <h2>Add Sessions</h2>
                 <p>Please select what time your car will be available until.</p>
-                <p><input id="durationExample" type="text" class="time" placeholder="Enter time"/></p>
+                              <p id="datepairExample">
+                  <input type="text" class="date start" />
+                  <input type="text" class="time start" /> to
+                  <input type="text" class="time end" />
+                  <input type="text" class="date end" />
+
+                  <script type="text/javascript" src="datepair.js"></script>
+<script type="text/javascript" src="jquery.datepair.js"></script>
+<script>
+    // initialize input widgets first
+    $('#datepairExample .time').timepicker({
+        'showDuration': true,
+        'timeFormat': 'g:ia'
+    });
+
+    $('#datepairExample .date').datepicker({
+        'format': 'yyyy-m-d',
+        'autoclose': true
+    });
+
+    // initialize datepair
+    $('#datepairExample').datepair();
+</script>
+              </p>
                 <button type="button" data-toggle="/'tooltip" onclick="createTimeSlot()">Create</button>
         </div>
     </div>

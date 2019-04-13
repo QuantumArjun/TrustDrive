@@ -42,10 +42,3 @@ function createTimeSlot() {
     document.getElementById('create').style.display = "none";
 }
 
-$(function() {
-    $('#durationExample').timepicker({
-        'minTime': '2:00pm',
-        'maxTime': '11:30pm',
-        'showDuration': true
-    });
-});
