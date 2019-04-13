@@ -1,9 +1,11 @@
 html{
 	/* set the html page to take up the entire screen*/
+	background-image: linear-gradient(#00e174, #00f3f9);
+  background-attachment: fixed;
 	height: 100%;
 }
 body {
-  background-image: linear-gradient(#00e174, #00f3f9);
+
   font-family: 'Open Sans', sans-serif;    
     display: flex;
     flex-direction: column;
@@ -11,6 +13,7 @@ body {
     align-items: center;
     height: 100%
 }
+
 .carAvailibility{
 	align-items: center;
 	text-align: center;
@@ -30,10 +33,11 @@ body {
 .card {
   display: flex;
   height: 180px;
-  width: 200px;
+  width: 400px;
   background-color: #33383f;
-  border-radius: 10px;
+  border-radius: 7px;
   box-shadow: 0rem 0 2rem #000;
+  margin-bottom: 1.0em;
 /*   margin-left: -50px; */
   transition: 0.4s ease-out;
   position: relative;
@@ -69,6 +73,22 @@ body {
   position: absolute;
   left: 20px;
   top: 50px;
+}
+.carModel{
+	color: white;
+	font-size: 14px;
+  font-weight: 200;
+  position: absolute;
+  left: 20px;
+  top: 70px;
+}
+.Ownernotes{
+		color: white;
+	font-size: 14px;
+  font-weight: 200;
+  position: absolute;
+  left: 20px;
+  top: 90px;
 }
 
 
