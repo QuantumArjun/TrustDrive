@@ -5,8 +5,6 @@ html {
 }
 
 .checkout {
-
-    height: 50vh;
     width: 40vw;
     margin: auto;
     margin-top: 3em;
@@ -50,9 +48,12 @@ tr:nth-child(even) {
 button {
     padding: 10px;
     border: 1px solid white;
+    border-radius: 5px;
     background: none;
     color: white;
     transition-duration: 0.4s;
+    margin: 2em;
+
 }
 
 button:hover {
