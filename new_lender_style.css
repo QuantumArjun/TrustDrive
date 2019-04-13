@@ -1,1 +1,137 @@
+html{
+	/* set the html page to take up the entire screen*/
+	background-image: linear-gradient(#00e174, #00f3f9);
+  background-attachment: fixed;
+	height: 100%;
+}
+
+.simple-form {
+  display: flex;
+  padding-bottom: 1.25rem;
+}
+
+.error {
+	font-size: 10pt;
+	color: red;
+}
+
+.simple-form input {
+  margin: .25rem;
+  min-width: 200px;
+	min-height: 30px;
+	font-size: 0.5em;
+  padding: 0.25em;
+  padding-left: 0.5em;
+  border: 1px solid #d6d6d6;
+  background: none;
+  color: #d6d6d6;
+  border-left: 3px solid;
+  border-radius: 5px;
+  transition: border-color .5s ease-out;
+}
+
+.simple-form input:focus {
+  box-shadow: 0 0 3px white;
+  border: 1px solid white;
+}
+.simple-form input:optional {
+  border-left-color: #999;
+}
+.simple-form input:required {
+  border-left-color: palegreen;
+}
+.simple-form input:invalid {
+  border-left-color: salmon;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    height: 100%
+}
+
+.tab {
+  overflow: hidden;
+  font-size: 20px;
+  color: white;
+  border: 1px solid #cfcc;
+  background-color: #33383f;
+  position: relative;
+  width: 100%;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30vh;
+  height: 400px;
+}
+.card {
+  display: flex;
+  width: 45vw;
+  background-color: #33383f;
+  justify-content: center;
+  border-radius: 7px;
+  box-shadow: 0rem 0 2rem #000;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  margin-bottom: 3em;
+}
+
+.tabcontent {
+  display: none;
+  text-align: center;
+  padding: 6px 12px;
+  border-top: none;
+    font-size: 30px;
+  color: white;
+}
+.input{
+
+}
+
+label[for=user]{
+  font-weight: 200;
+
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  color:white;
+  border: none;
+  cursor: pointer;
+  padding: 28px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 33%;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+  color:black;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Card Buttons */
+.card button {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  transition-duration: 0.4s;
+  margin: 2em;
+
+}
+
+.card button:hover {
+  color: #33383f;
+  background-color: white;
+}
 
