@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Testing Testing 123</title>
+	<link rel="stylesheet" type="text/css" href="lenderStyle.css">
+    <link rel="stylesheet" type="text/css" href="timepicker/jquery.timepicker.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="timepicker/jquery.timepicker.min.js"></script>
+</head>
+<body>
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="friends.html">Friends</a>
+  <a href="rider.html">Ride a Car</a>
+  <a href="lender.html">Lend Your Car</a>
+  <a href="help.html">Help</a>
+  <a href="home.html">Sign Out</a>
+</div>
+
+<div class = "openMenu" style = "cursor:pointer" onclick="openNav()">&#9776; Menu</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+	<div id="presentation" data-toggle="tooltip">
+        <h1>Friend 1</h1>
+        <h3>Cars: </h3>
+</div>
+
+<div class = "openTimes">
+
+</div>
+
+<div id="container-floating">
+
+  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="openModal()">
+    <p class="plus">+</p>
+    <img class="edit" src="http://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
+  </div>
+
+</div>
+
+<!--Modal Window-->
+    <div id="create" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+                <h2>Add a friend</h2>
+                <p>Enter Name: </p>
+                <p>Add Through Facebook</p>
+                
+            <script>
+                $(function() {
+                    $('#durationExample').timepicker({
+
+                        'minTime': '2:00pm',
+                        'maxTime': '11:30pm',
+                        'showDuration': true
+                    });
+                });
+            </script>
+        </div>
+
+    </div>
+
+
+
+    <script src="lender.js"></script>
+
+
+</body>
+</html>
+
 
