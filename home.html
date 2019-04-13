@@ -3,6 +3,30 @@
 <head>
 	<title> AirBnb For your car </title>
 	<link rel="stylesheet" href="home.css">
+	 <script src="https://javascript-sdk.smartcar.com/sdk-2.1.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script>
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDu7MTm-N154EVmrgSV1722ELwe8qSJ220",
+    authDomain: "trust-drive-8c229.firebaseapp.com",
+    databaseURL: "https://trust-drive-8c229.firebaseio.com",
+    projectId: "trust-drive-8c229",
+    storageBucket: "trust-drive-8c229.appspot.com",
+    messagingSenderId: "431444258807"
+  };
+  firebase.initializeApp(config);
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+</script>	
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
 </head>
 <body>
 <div class="tab">
@@ -20,7 +44,17 @@
 			<input type="text" placeholder="Enter Username" name="uname" id="username" required><br>
 			<label for="pass"><b></b></label>
 			<input type="password" placeholder="Enter Password" name="password" required><br>
-			<a href="rider.html"><button onclick="saveUsername(document.getElementById('username').value)">Login</button></a>
+			<script>
+			
+			ui.start('#firebaseui-auth-container', {
+  			signInOptions: [
+    // List of OAuth providers supported.
+   			 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+     	],
+  // Other config options...
+	});
+			</script>
+			<a href="rider.html"><button id="firebaseui-auth-container">Login</button></a>
 		</div>
 
 		<div id="lender" class="simple-form tabcontent">
@@ -44,7 +78,25 @@
 			<input type="text" placeholder="Enter Username" name="uname" required><br>
 			<label for="pass"><b>Password</b></label>
 			<input type="password" placeholder="Enter Password" name="password" required><br>
-			<button type="submit">Enter</button>
+			<button id= "checkout" type="submit" onclick="checkout.js">Enter</button>
+                <script>
+                      const smartcar = new Smartcar({
+                        clientId: '7d7efd95-a9f3-4d50-b34a-9fb99ac4c1a5',
+                        redirectUri: 'https://javascript-sdk.smartcar.com/redirect-2.1.1?app_origin=http://localhost:1337',
+                        scope: ['read_vehicle_info', 'read_odometer'],
+                        testMode: true,
+                    onComplete: function(err, code) {
+                    if (err) {
+                    // handle errors from the authorization flow (i.e. user denies access)
+                    }
+                    // handle the returned code by sending it to your back-end server
+                    console.log("back here");
+                    },
+                });
+            smartcar.addClickHandler({id:"checkout"});
+            const url = smartcar.getAuthUrl(); 
+            console.log(url);
+                </script>
 		</form>
 	</div>
 </div>

@@ -11,5 +11,4 @@
       addClickHandler({id:"#checkout"});
     },
   });
- smartcar.addClickHandler({id:"#checkout"});
-  
+const url = smartcar.getAuthUrl();
