@@ -1,6 +1,7 @@
 function openModal() {
     // Get the modal
     var modal = document.getElementById('create');
+    var datePicker = document.getElementById("dateAndTime");
 
 // Get the button that opens the modal
     var btn = document.getElementById("floating-button");
@@ -18,7 +19,7 @@ function openModal() {
 
 // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-        if (event.target == modal) {
+        if (event.target == modal && event.target == datePicker) {
             modal.style.display = "none";
         }
     }
@@ -30,7 +31,7 @@ function createTimeSlot() {
   //  modal.append("Testing");
     //modal.style.display = "none";
     console.log("here");
-    var form_data = document.getElementById("durationExample").value;
+    var form_data = document.getElementById("dateAndTime").value;
     var card = "<div class=\"card\">\n" +
         "    <h3 class=\"title\">" + sessionStorage.getItem("username") + "</h3>\n" +
         "    <h3 class=\"time\">" + form_data + "</h3>\n" +

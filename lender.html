@@ -3,9 +3,10 @@
 <head>
 	<title> Testing Testing 123</title>
 	<link rel="stylesheet" type="text/css" href="lenderStyle.css">
-    <link rel="stylesheet" type="text/css" href="timepicker/jquery.timepicker.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="timepicker/jquery.timepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
 </head>
@@ -53,29 +54,20 @@ function closeNav() {
             <span class="close">&times;</span>
                 <h2>Add Sessions</h2>
                 <p>Please select what time your car will be available until.</p>
-                              <p id="datepairExample">
-                  <input type="text" class="date start" />
-                  <input type="text" class="time start" /> to
-                  <input type="text" class="time end" />
-                  <input type="text" class="date end" />
+            <input type="text" name="datetimes" id="dateAndTime"/>
 
-                  <script type="text/javascript" src="datepair.js"></script>
-<script type="text/javascript" src="jquery.datepair.js"></script>
-<script>
-    // initialize input widgets first
-    $('#datepairExample .time').timepicker({
-        'showDuration': true,
-        'timeFormat': 'g:ia'
-    });
-
-    $('#datepairExample .date').datepicker({
-        'format': 'yyyy-m-d',
-        'autoclose': true
-    });
-
-    // initialize datepair
-    $('#datepairExample').datepair();
-</script>
+            <script>
+                $(function() {
+                    $('input[name="datetimes"]').daterangepicker({
+                        timePicker: true,
+                        startDate: moment().startOf('hour'),
+                        endDate: moment().startOf('hour').add(32, 'hour'),
+                        locale: {
+                            format: 'M/DD hh:mm A'
+                        }
+                    });
+                });
+            </script>
               </p>
                 <button type="button" data-toggle="/'tooltip" onclick="createTimeSlot()">Create</button>
         </div>
