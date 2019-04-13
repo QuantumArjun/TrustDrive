@@ -8,6 +8,28 @@
 
 
 <body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Friends</a>
+  <a href="#">Ride a Car</a>
+  <a href="#">Lend Your Car</a>
+  <a href="#">Help</a>
+</div>
+
+<div class = "openMenu" style = "cursor:pointer" onclick="openNav()">&#9776; Menu</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
 	<div class = "carAvailability">
 		Cars Available
 	</div>
