@@ -49,7 +49,7 @@
   // Privacy policy url.
   privacyPolicyUrl: '<your-privacy-policy-url>'
 };
-</script>	
+</script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
@@ -67,11 +67,11 @@
 		<div id = "rider" class="simple-form tabcontent">
 			<h2 class="rider section_header">Rider</h2>
 			<label for="user"><b></b></label>
-			<input type="text" placeholder="Enter Username" name="uname" id="username" required><br>
+			<input type="text" placeholder="Enter Username" name="uname" id="usernamerider" required><span class="error" id="fail1rider"></span><br>
 			<label for="pass"><b></b></label>
-			<input type="password" placeholder="Enter Password" name="password" required><br>
+			<input type="password" placeholder="Enter Password" name="password" id="passwordrider" required><span class="error" id="fail2rider"></span><br>
 			<script>
-			
+
 			ui.start('#firebaseui-auth-container', {
   			signInOptions: [
     // List of OAuth providers supported.
@@ -80,16 +80,16 @@
   // Other config options...
 	});
 			</script>
-			<a href="rider.html"><button id="firebaseui-auth-container">Login</button></a>
+			<button onclick="login('rider')">Login</button>
 		</div>
 
 		<div id="lender" class="simple-form tabcontent">
 			<h2 class="lender section_header">Lender</h2>
 			<label for="user"><b></b></label>
-			<input type="text" placeholder="Enter Username" name="uname" id="username1" required><br>
+			<input type="text" placeholder="Enter Username" name="uname" id="usernamelender" required><span class="error" id="fail1lender"></span><br>
 			<label for="pass"><b></b></label>
-			<input type="password" placeholder="Enter Password" name="password" required><br>
-			<a href="lender.html"><button onclick="saveUsername(document.getElementById('username1').value)">Login</button></a>
+			<input type="password" placeholder="Enter Password" name="password" id="passwordlender" required><span class="error" id="fail2lender"></span><br>
+			<button onclick="login('lender')">Login</button>
 		</div>
 
 		<form id="new_account" class="simple-form tabcontent">
@@ -120,7 +120,7 @@
                     },
                 });
             smartcar.addClickHandler({id:"checkout"});
-            const url = smartcar.getAuthUrl(); 
+            const url = smartcar.getAuthUrl();
             console.log(url);
                 </script>
 		</form>
