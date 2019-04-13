@@ -25,17 +25,27 @@ function openModal() {
 }
 
 function createTimeSlot() {
-    var time = document.getElementById("durationExample").value;
-    var modal = document.getElementById('create');
+    var doc_element = document.getElementById('modal_cards');
 
-    modal.style.display = "none";
-
+  //  modal.append("Testing");
+    //modal.style.display = "none";
+    console.log("here");
+    var form_data = document.getElementById("durationExample").value;
     var card = "<div class=\"card\">\n" +
-        "    <h3 class=\"title\">Arjun Karanam</h3>\n" +
-        "    <h3 class=\"distance\">0.5 miles away</h3>\n" +
-        "    <h3 class = \"carModel\" > Toyota Camry</h3>\n" +
-        "    <h3 class = \"Ownernotes\" >  Special Notes: Hey the Trunk does not work</h3>\n" +
+        "    <h3 class=\"title\">" + sessionStorage.getItem("username") + "</h3>\n" +
+        "    <h3 class=\"time\">" + form_data + "</h3>\n" +
+        // "    <h3 class=\"distance\">0.5 miles away</h3>\n" +
+        // "    <h3 class = \"carModel\" > Toyota Camry</h3>\n" +
+        // "    <h3 class = \"Ownernotes\" >  Special Notes: Hey the Trunk does not work</h3>\n" +
         "   </div>";
-
-    ("openTimes").append("<p>created</p>" );
+    doc_element.innerHTML += card;
+    document.getElementById('create').style.display = "none";
 }
+
+$(function() {
+    $('#durationExample').timepicker({
+        'minTime': '2:00pm',
+        'maxTime': '11:30pm',
+        'showDuration': true
+    });
+});

@@ -1,6 +1,8 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="riderStyle.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
 	<title>
 		Airbnb for Cars
 	</title>
@@ -8,6 +10,29 @@
 
 
 <body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="friends.html">Friends</a>
+  <a href="rider.html">Ride a Car</a>
+  <a href="lender.html">Lend Your Car</a>
+  <a href="help.html">Help</a>
+  <a href="home.html">Sign Out</a>
+</div>
+
+<div class = "openMenu" style = "cursor:pointer" onclick="openNav()">&#9776; Menu</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
 	<div class = "carAvailability">
 		Cars Available
 	</div>
@@ -38,6 +63,21 @@
 </a>
     </div>
 </div>
+
+//firebase
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDu7MTm-N154EVmrgSV1722ELwe8qSJ220",
+        authDomain: "trust-drive-8c229.firebaseapp.com",
+        databaseURL: "https://trust-drive-8c229.firebaseio.com",
+        projectId: "trust-drive-8c229",
+        storageBucket: "trust-drive-8c229.appspot.com",
+        messagingSenderId: "431444258807"
+    };
+    firebase.initializeApp(config);
+</script>
 </body>
 
 
