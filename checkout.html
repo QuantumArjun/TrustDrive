@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Checkout</title>
     <link rel="stylesheet" type="text/css" href="checkout.css">
-</head>
+    <script src="https://javascript-sdk.smartcar.com/sdk-2.1.1.js"></script>
+    
+   </head>
 <body>
     <div class = "checkout">
         <div class = "checkout-card">
@@ -24,7 +26,27 @@
                         <td>$1.71</td>
                     </tr>
                 </table>
-                <button type="button">Checkout</button>
+                <button id= "checkout" type="button" onclick="checkout.js">Checkout</button>
+                
+                <script>
+                      const smartcar = new Smartcar({
+    clientId: '7d7efd95-a9f3-4d50-b34a-9fb99ac4c1a5',
+    redirectUri: 'https://javascript-sdk.smartcar.com/redirect-2.1.1?app_origin=http://localhost:1337',
+    scope: ['read_vehicle_info', 'read_odometer'],
+    testMode: true,
+    onComplete: function(err, code) {
+      if (err) {
+        // handle errors from the authorization flow (i.e. user denies access)
+      }
+      // handle the returned code by sending it to your back-end server
+      console.log("back here");
+    },
+  });
+ smartcar.addClickHandler({id:"checkout"});
+  
+                </script>
+
+            
             </div>
         </div>
     </div>
