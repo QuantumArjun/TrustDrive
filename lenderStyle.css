@@ -1,11 +1,15 @@
 body{
-  font-family: 'Roboto';
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
-  background: #f1f1f1;
+  background-color: #100e17;
 }
 
 h3{
-  color: #555;
+  color: #FFF;
+}
+
+h1{
+  color: #FFF;
 }
 
 #presentation{
@@ -13,7 +17,7 @@ h3{
   height: 120px;
   padding: 20px;
   margin: auto;
-  background: #FFF;
+  background-color: #17141d;
   margin-top: 10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
   transition: all 0.3s; 
