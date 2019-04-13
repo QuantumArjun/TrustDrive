@@ -1,0 +1,61 @@
+html {
+    background-image: linear-gradient(#00e174, #00f3f9);
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.checkout {
+
+    height: 50vh;
+    width: 40vw;
+    margin: auto;
+    margin-top: 3em;
+    padding: 0.5em;
+    text-align: center;
+    background-color: #33383f;
+    border-radius: 7px;
+    box-shadow: -1rem 0 3rem #000;
+
+    transition: 0.4s ease-out;
+    box-shadow: 0rem 0 2rem #000;
+
+    color: white;
+}
+
+h3 {
+    font-size: 3em;
+    padding: 0.5em;
+    margin: 0.25em;
+    border-bottom: white;
+    border-bottom-style: solid;
+}
+
+td, th {
+    border: none;
+    text-align: left;
+    padding: 8px;
+}
+
+table {
+    width: 70%;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+tr:nth-child(even) {
+    background-color: #3f454c;
+}
+
+button {
+    padding: 10px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    color: #33383f;
+    background-color: white;
+}
