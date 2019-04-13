@@ -6,7 +6,6 @@ html{
 }
 
 body {
-
   font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
@@ -18,7 +17,9 @@ body {
 .tab {
   overflow: hidden;
   border: 1px solid #cfcc;
-  background-color: #f1f1f1;
+  background-color: #33383f;
+  position: relative;
+  width: 100%;
 }
 
 /* Style the buttons inside the tab */
@@ -31,6 +32,7 @@ body {
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
+  width: 33%;
 }
 
 .tab button:hover {
