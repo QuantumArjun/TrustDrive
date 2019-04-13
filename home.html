@@ -13,42 +13,39 @@
 
 
 <div class="container">
-	<div class = "card">
-		<form id="rider" class="simple-form tabcontent">
-			<h2 class="rider section_header">Rider</h1>
+	<div class = "card" >
+		<form id = "rider" class="simple-form tabcontent">
+			<h2 class="rider section_header">Rider</h2>
 			<label for="user"><b></b></label>
-		  <input type="text" placeholder="Enter Username" name="uname" required><br>
-	    <label for="pass"><b></b></label>
-		  <input type="password" placeholder="Enter Password" name="password" required><br>
+		  	<input type="text" placeholder="Enter Username" name="uname" required><br>
+	    	<label for="pass"><b></b></label>
+		  	<input type="password" placeholder="Enter Password" name="password" required><br>
 			<button type="submit">Login</button>
 		</form>
-	</div>
-</div>
+	
+		<form id="lender" class="simple-form tabcontent">
+			<h2 class="lender section_header">Lender</h2>
+			<label for="user"><b></b></label>
+		  	<input type="text" placeholder="Enter Username" name="uname" required><br>
+	    	<label for="pass"><b></b></label>
+		  	<input type="password" placeholder="Enter Password" name="password" required><br>
+			<button type="submit">Login</button>
+		</form>
 
-<div id="lender" class="tabcontent">
-	<h2 class="lender_section_header">Lender:</h1>
-	<div>
-		<label for="user"><b>Username</b></label>
-		<input type="text" placeholder="Enter Username" name="uname" required><br>
-		<label for="pass"><b>Password</b></label>
-		<input type="password" placeholder="Enter Password" name="password" required><br>
-  </div>
-	<button type="submit">Login</button>
-</div>
-
-<div id="new_account" class="tabcontent">
-	<h2 class="new_account_section_header">New Account:</h1>
-	<div>
-		<label for="user"><b>Name</b></label>
-		<input type="text" placeholder="Enter Name" name="name" required><br>
-		<label for="user"><b>I am a...</b></label><br>
-		<input type="radio" name="user_is" value="rider"> Rider<br>
-		<input type="radio" name="user_is" value="lender"> Lender<br>
-		<input type="radio" name="user_is" value="both"> Both <br>
-		<label for="user"><b>Username</b></label>
-		<input type="text" placeholder="Enter Username" name="uname" required><br>
-		<label for="pass"><b>Password</b></label>
-		<input type="password" placeholder="Enter Password" name="password" required><br>
+		<form id="new_account" class="simple-form tabcontent">
+			<h2 class="new_account_section_header">New Account:</h2>
+			<label for="user"><b>Name</b></label>
+			<input type="text" placeholder="Enter Name" name="name" required><br>
+			<label for="user"><b>I am a...</b></label><br>
+			<input type="radio" name="user_is" value="rider"> Rider<br>
+			<input type="radio" name="user_is" value="lender"> Lender<br>
+			<input type="radio" name="user_is" value="both"> Both <br>
+			<label for="user"><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="uname" required><br>
+			<label for="pass"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="password" required><br>
+			<button type="submit">Enter</button>
+		</form>
 	</div>
 </div>
 <script src="home.js"></script>
