@@ -11,3 +11,8 @@ function openTab(evt, tab_name) {
     document.getElementById(tab_name).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
+function saveUsername {
+    var username = document.getElementById("uname").value;
+    window.name = username;
+}
