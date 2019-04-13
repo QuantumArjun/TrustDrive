@@ -9,7 +9,7 @@ body {
   font-family: 'Open Sans', sans-serif;    
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     height: 100%
 }
@@ -33,7 +33,7 @@ body {
 .card {
   display: flex;
   height: 180px;
-  width: 400px;
+  width: 45vw;
   background-color: #33383f;
   border-radius: 7px;
   box-shadow: 0rem 0 2rem #000;
