@@ -6,7 +6,7 @@ html{
 }
 
 body{
-  font-family: 'Open Sans', sans-serif;    
+  font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,12 +29,29 @@ h1{
   margin: auto;
   background-color: #33383f;
   margin-top: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
-  transition: all 0.3s; 
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s;
   border-radius: 3px;
 }
 
 #presentation:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: all 0.3s;
+  transform: translateZ(10px);
+}
+
+.card{
+  width: 480px;
+  padding: 20px;
+  margin: auto;
+  background-color: #515151;
+  margin-top: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s;
+  border-radius: 3px;
+}
+
+.card:hover{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   transition: all 0.3s;
   transform: translateZ(10px);
@@ -254,4 +271,44 @@ button:hover {
 
 }
 
+.simple-form {
+  display: flex;
+  padding-bottom: 1.25rem;
+}
 
+.error {
+	font-size: 10pt;
+	color: red;
+}
+
+.simple-form input {
+  margin: .25rem;
+  min-width: 200px;
+	min-height: 30px;
+	font-size: 0.5em;
+  padding: 0.25em;
+  padding-left: 0.5em;
+  border: 1px solid #d6d6d6;
+  background: none;
+  color: #d6d6d6;
+  border-left: 3px solid;
+  border-radius: 5px;
+  transition: border-color .5s ease-out;
+}
+
+.simple-form input:focus {
+  box-shadow: 0 0 3px white;
+  border: 1px solid white;
+}
+.simple-form input:optional {
+  border-left-color: #999;
+}
+.simple-form input:required {
+  border-left-color: palegreen;
+}
+.simple-form input:invalid {
+  border-left-color: salmon;
+}
+.input{
+
+}
