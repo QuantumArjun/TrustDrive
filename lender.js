@@ -30,14 +30,16 @@ function createTimeSlot() {
   //  modal.append("Testing");
     //modal.style.display = "none";
     console.log("here");
+    var form_data = document.getElementById("durationExample").value;
     var card = "<div class=\"card\">\n" +
         "    <h3 class=\"title\">" + sessionStorage.getItem("username") + "</h3>\n" +
-        "    <h3 class=\"distance\">0.5 miles away</h3>\n" +
-        "    <h3 class = \"carModel\" > Toyota Camry</h3>\n" +
-        "    <h3 class = \"Ownernotes\" >  Special Notes: Hey the Trunk does not work</h3>\n" +
+        "    <h3 class=\"time\">" + form_data + "</h3>\n" +
+        // "    <h3 class=\"distance\">0.5 miles away</h3>\n" +
+        // "    <h3 class = \"carModel\" > Toyota Camry</h3>\n" +
+        // "    <h3 class = \"Ownernotes\" >  Special Notes: Hey the Trunk does not work</h3>\n" +
         "   </div>";
     doc_element.innerHTML += card;
-    //modal.append(card);
+    document.getElementById('create').style.display = "none";
 }
 
 $(function() {
