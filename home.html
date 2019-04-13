@@ -30,17 +30,19 @@
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
-      return true;
+      console.log(redirectUrl);
+      return false;
     },
     uiShown: function() {
       // The widget is rendered.
       // Hide the loader.
+
       document.getElementById('loader').style.display = 'none';
     }
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: '<url-to-redirect-to-on-success>',
+  signInSuccessUrl: 'http://localhost:1337/rider.html',
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -72,17 +74,21 @@
 			<label for="pass"><b></b></label>
 			<input type="password" placeholder="Enter Password" name="password" id="passwordrider" required><span class="error" id="fail2rider"></span><br>
 			<script>
-
 			ui.start('#firebaseui-auth-container', {
+  			signInSuccessUrl: 'http://localhost:1337/rider.html',
   			signInOptions: [
     // List of OAuth providers supported.
    			 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-     	],
+     		],
   // Other config options...
-	});
 
+			});
 			</script>
-			<button id = "firebaseui-auth-container" onclick="login('rider')">Login</button>
+			<a href = "rider.html"> 
+			<button id = "firebaseui-auth-container" onclick="login('rider')">
+				<a href = "rider.html"></a>
+				</button>
+		
 		</div>
 
 		<div id="lender" class="simple-form tabcontent">
