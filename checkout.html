@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Checkout</title>
     <link rel="stylesheet" type="text/css" href="checkout.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
 </head>
 <body>
     <div class = "checkout">
@@ -28,5 +30,19 @@
             </div>
         </div>
     </div>
+    //firebase
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDu7MTm-N154EVmrgSV1722ELwe8qSJ220",
+            authDomain: "trust-drive-8c229.firebaseapp.com",
+            databaseURL: "https://trust-drive-8c229.firebaseio.com",
+            projectId: "trust-drive-8c229",
+            storageBucket: "trust-drive-8c229.appspot.com",
+            messagingSenderId: "431444258807"
+        };
+        firebase.initializeApp(config);
+    </script>
 </body>
 </html>
