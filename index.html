@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> AirBnb For your car</title>
-	<body>
+	<title> AirBnb For your car </title>
+	<link rel="stylesheet" href="home_style.css">
+</head>
+<body>
+	<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'rider')">I am a <i>Rider</i></button>
+  <button class="tablinks" onclick="openTab(event, 'lender')">I am a <i>Lender</i></button>
+	<button class="tablinks" onclick="openTab(event, 'new_account')">I need an account</button>
+</div>
+
+<div id="rider" class="tabcontent">
+	<h2 class="rider section_header">Rider:</h1>
+		<label for="user"><b>Username</b></label>
+		<input type="text" placeholder="Enter Username" name="uname" required><br>
+		<label for="pass"><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" name="password" required><br>
+	<button type="submit">Login</button>
+</div>
+
+<div id="lender" class="tabcontent">
+	<h2 class="lender section_header">Lender:</h1>
 	<div>
 		<label for="user"><b>Username</b></label>
-		   <input type="text" placeholder="Enter Username" name="uname" required>
-		   </div>
-	<div>
-		<label for="pass"><b>password</b></label>
-<<<<<<< HEAD
-		   <input type="password" placeholder="Enter Password" name="password" required>
-=======
-		   <input type="password" placeholder="Enter Password" name="password" required>   	
->>>>>>> 094cb2f067eeb89e76f84755a9b31d11f33ce37d
-		   </div>
+		<input type="text" placeholder="Enter Username" name="uname" required><br>
+		<label for="pass"><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" name="password" required><br>
+  </div>
 	<button type="submit">Login</button>
-	</body>
+</div>
 
-</head>
+<div id="new_account" class="tabcontent">
+	<h2 class="new_account section_header">New Account:</h1>
+	<div>
+
+</div>
+<script src="home.js"></script>
+</body>
 </html>
-
