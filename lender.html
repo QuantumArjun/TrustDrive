@@ -27,14 +27,11 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-
+<div id="modal_cards">
 	<div id="presentation" data-toggle="tooltip" onclick="openModal()">
         <h1>Car X</h1>
         <h3>Status: In Use</h3>
-</div>
-
-<div class = "openTimes">
-
+	</div>
 </div>
 
 <div id="container-floating">
@@ -48,7 +45,6 @@ function closeNav() {
 
 <!--Modal Window-->
     <div id="create" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -56,25 +52,9 @@ function closeNav() {
                 <p>Please select what time your car will be available until.</p>
                 <p><input id="durationExample" type="text" class="time" placeholder="Enter time"/></p>
                 <button type="button" data-toggle="/'tooltip" onclick="createTimeSlot()">Create</button>
-            <script>
-                $(function() {
-                    $('#durationExample').timepicker({
-
-                        'minTime': '2:00pm',
-                        'maxTime': '11:30pm',
-                        'showDuration': true
-                    });
-                });
-            </script>
         </div>
-
     </div>
 
-
-
     <script src="lender.js"></script>
-
-
 </body>
 </html>
-
