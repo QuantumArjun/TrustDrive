@@ -43,3 +43,6 @@ function createTimeSlot() {
     document.getElementById('create').style.display = "none";
 }
 
+function clearSession() {
+    sessionStorage.clear();
+}
