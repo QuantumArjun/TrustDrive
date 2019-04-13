@@ -14,5 +14,4 @@ function openTab(evt, tab_name) {
 
 function saveUsername(username) {
     sessionStorage.setItem("username", username);
-
 }
