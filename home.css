@@ -11,14 +11,23 @@ html{
 }
 
 .simple-form input {
-  margin: 0 .25rem;
+  margin: .25rem;
   min-width: 200px;
 	min-height: 30px;
-	font-size: 16pt;
-  border: 1px solid #eee;
+	font-size: 0.5em;
+  padding: 0.25em;
+  padding-left: 0.5em;
+  border: 1px solid #d6d6d6;
+  background: none;
+  color: #d6d6d6;
   border-left: 3px solid;
   border-radius: 5px;
   transition: border-color .5s ease-out;
+}
+
+.simple-form input:focus {
+  box-shadow: 0 0 3px white;
+  border: 1px solid white;
 }
 .simple-form input:optional {
   border-left-color: #999;
@@ -56,7 +65,6 @@ body {
 }
 .card {
   display: flex;
-  height: 480px;
   width: 45vw;
   background-color: #33383f;
   justify-content: center;
@@ -64,7 +72,7 @@ body {
   box-shadow: 0rem 0 2rem #000;
 /*   margin-left: -50px; */
   transition: 0.4s ease-out;
-
+  margin-bottom: 3em;
 }
 
 .tabcontent {
@@ -103,4 +111,21 @@ label[for=user]{
 
 .tab button.active {
   background-color: #ccc;
+}
+
+/* Card Buttons */
+.card button {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  transition-duration: 0.4s;
+  margin: 2em;
+
+}
+
+.card button:hover {
+  color: #33383f;
+  background-color: white;
 }
