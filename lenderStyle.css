@@ -1,7 +1,17 @@
+html{
+  /* set the html page to take up the entire screen*/
+  background-image: linear-gradient(#00e174, #00f3f9);
+  background-attachment: fixed;
+  height: 100%;
+}
+
 body{
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  background-color: #100e17;
+  font-family: 'Open Sans', sans-serif;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%
 }
 
 h3{
@@ -17,7 +27,7 @@ h1{
   height: 120px;
   padding: 20px;
   margin: auto;
-  background-color: #17141d;
+  background-color: #33383f;
   margin-top: 10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
   transition: all 0.3s; 
