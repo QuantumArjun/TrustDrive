@@ -5,11 +5,11 @@
 	<link rel="stylesheet" href="home.css">
 </head>
 <body>
-	<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'rider')">I am a <i>Rider</i></button>
-  <button class="tablinks" onclick="openTab(event, 'lender')">I am a <i>Lender</i></button>
+<div class="tab">
+	<button class="tablinks" onclick="openTab(event, 'rider')">I am a <i>Rider</i></button>
+	<button class="tablinks" onclick="openTab(event, 'lender')">I am a <i>Lender</i></button>
 	<button class="tablinks" onclick="openTab(event, 'new_account')">I need an account</button>
-	</div>
+</div>
 
 
 <div class="container">
@@ -17,19 +17,19 @@
 		<div id = "rider" class="simple-form tabcontent">
 			<h2 class="rider section_header">Rider</h2>
 			<label for="user"><b></b></label>
-		  	<input type="text" placeholder="Enter Username" name="uname" required><br>
-	    	<label for="pass"><b></b></label>
-		  	<input type="password" placeholder="Enter Password" name="password" required><br>
-			<a href="rider.html"><button>Login</button></a>
+			<input type="text" placeholder="Enter Username" name="uname" id="username" required><br>
+			<label for="pass"><b></b></label>
+			<input type="password" placeholder="Enter Password" name="password" required><br>
+			<a href="rider.html"><button onclick="saveUsername(document.getElementById('username').value)">Login</button></a>
 		</div>
-	
+
 		<div id="lender" class="simple-form tabcontent">
 			<h2 class="lender section_header">Lender</h2>
 			<label for="user"><b></b></label>
-		  	<input type="text" placeholder="Enter Username" name="uname" required><br>
-	    	<label for="pass"><b></b></label>
-		  	<input type="password" placeholder="Enter Password" name="password" required><br>
-			<a href="lender.html"><button>Login</button></a>
+			<input type="text" placeholder="Enter Username" name="uname" id="username1" required><br>
+			<label for="pass"><b></b></label>
+			<input type="password" placeholder="Enter Password" name="password" required><br>
+			<a href="lender.html"><button onclick="saveUsername(document.getElementById('username1').value)">Login</button></a>
 		</div>
 
 		<form id="new_account" class="simple-form tabcontent">

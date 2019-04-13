@@ -1,5 +1,4 @@
 function openModal() {
-    alert(window.name)
     // Get the modal
     var modal = document.getElementById('create');
 
