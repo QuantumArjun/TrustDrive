@@ -9,6 +9,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
 </head>
 <body>
+  <div id="checkout-card-list">
     <div class = "checkout">
         <div class = "checkout-card">
             <div class = "checkout-container">
@@ -27,11 +28,13 @@
                         <td>$1.71</td>
                     </tr>
                 </table>
-                <button id= "checkout" type="button" onclick="checkout.js">Checkout</button>
-            
+                <button id= "checkout" type="button" onclick="checkout()">Checkout</button>
             </div>
         </div>
     </div>
+    <div id="check-card">
+    </div>
+  </div>
     //firebase
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
     <script>
@@ -46,5 +49,6 @@
         };
         firebase.initializeApp(config);
     </script>
+    <script src="checkout.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-  const smartcar = new Smartcar({
+const smartcar = new Smartcar({
     clientId: '7d7efd95-a9f3-4d50-b34a-9fb99ac4c1a5',
     redirectUri: 'https://javascript-sdk.smartcar.com/redirect-2.1.1?app_origin=http://localhost:1337',
     scope: ['read_vehicle_info', 'read_odometer'],
@@ -10,5 +10,23 @@
       sendToBackend(code);
       addClickHandler({id:"#checkout"});
     },
-  });
+});
 const url = smartcar.getAuthUrl();
+
+function checkout() {
+  var doc_element = document.getElementById('check-card');
+  //  modal.append("Testing");
+  //modal.style.display = "none";
+  console.log("here");
+  var card = '<div class="card"><div><button id= "checkout" type="button" onclick="unlock()">Unlock</button>' +
+      '<button id= "checkout" type="button" onclick="lock()">Lock</button></div></div>';
+  doc_element.innerHTML = card;
+}
+
+function lock() {
+
+}
+
+function unlock() {
+
+}

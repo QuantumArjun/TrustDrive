@@ -20,6 +20,10 @@ html {
     color: white;
 }
 
+#check-card {
+  text-align: center;
+}
+
 h3 {
     font-size: 3em;
     padding: 0.5em;
@@ -53,7 +57,39 @@ button {
     color: white;
     transition-duration: 0.4s;
     margin: 2em;
+}
 
+button:hover {
+    color: #33383f;
+    background-color: white;
+}
+
+.card{
+  width: 480px;
+  padding: 20px;
+  margin: auto;
+  background-color: #515151;
+  margin-top: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s;
+  border-radius: 3px;
+}
+
+.card:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: all 0.3s;
+  transform: translateZ(10px);
+}
+
+.card button {
+  padding: 10px;
+  min-width: 100px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  transition-duration: 0.4s;
+  margin: 2em;
 }
 
 button:hover {
