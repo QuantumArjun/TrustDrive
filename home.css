@@ -10,6 +10,11 @@ html{
   padding-bottom: 1.25rem;
 }
 
+.error {
+	font-size: 10pt;
+	color: red;
+}
+
 .simple-form input {
   margin: .25rem;
   min-width: 200px;

@@ -12,6 +12,30 @@ function openTab(evt, tab_name) {
     evt.currentTarget.className += " active";
 }
 
+function login(who) {
+
+  var username = document.getElementById('username' + who).value;
+  var password = document.getElementById('password' + who).value;
+  var fail = false;
+  console.log(who);
+  if(username == "") {
+    document.getElementById('fail1' + who).innerHTML = "Error: Username can't be blank";
+    fail = true;
+  } else {
+    document.getElementById('fail1' + who).innerHTML = "";
+  }
+  if(password == "") {
+    document.getElementById('fail2' + who).innerHTML = "Error: Password can't be blank";
+    fail = true;
+  } else {
+    document.getElementById('fail2' + who).innerHTML = "";
+  }
+  if(fail) return;
+  saveUsername(username.value);
+  if(who == 'rider') window.location.replace("rider.html");
+  if(who == 'lender') window.location.replace("lender.html");
+}
+
 function saveUsername(username) {
     sessionStorage.setItem("username", username);
 }

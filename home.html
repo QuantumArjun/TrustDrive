@@ -17,19 +17,19 @@
 		<div id = "rider" class="simple-form tabcontent">
 			<h2 class="rider section_header">Rider</h2>
 			<label for="user"><b></b></label>
-			<input type="text" placeholder="Enter Username" name="uname" id="username" required><br>
+			<input type="text" placeholder="Enter Username" name="uname" id="usernamerider" required><span class="error" id="fail1rider"></span><br>
 			<label for="pass"><b></b></label>
-			<input type="password" placeholder="Enter Password" name="password" required><br>
-			<a href="rider.html"><button onclick="saveUsername(document.getElementById('username').value)">Login</button></a>
+			<input type="password" placeholder="Enter Password" name="password" id="passwordrider" required><span class="error" id="fail2rider"></span><br>
+			<button onclick="login('rider')">Login</button>
 		</div>
 
 		<div id="lender" class="simple-form tabcontent">
 			<h2 class="lender section_header">Lender</h2>
 			<label for="user"><b></b></label>
-			<input type="text" placeholder="Enter Username" name="uname" id="username1" required><br>
+			<input type="text" placeholder="Enter Username" name="uname" id="usernamelender" required><span class="error" id="fail1lender"></span><br>
 			<label for="pass"><b></b></label>
-			<input type="password" placeholder="Enter Password" name="password" required><br>
-			<a href="lender.html"><button onclick="saveUsername(document.getElementById('username1').value)">Login</button></a>
+			<input type="password" placeholder="Enter Password" name="password" id="passwordlender" required><span class="error" id="fail2lender"></span><br>
+			<button onclick="login('lender')">Login</button>
 		</div>
 
 		<form id="new_account" class="simple-form tabcontent">
