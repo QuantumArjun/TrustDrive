@@ -3,15 +3,29 @@ var Users = db.collection("Users");
 var email = sessionStorage.getItem("email");
 console.log(email);
 var thisUser = Users.doc(sessionStorage.getItem("email"));
-var scheduleRef = thisUser.doc("car_schedules");
+var scheduleRef = thisUser.collection("car_schedules");
 function updatePage() {
     // Create a reference to the cities collection
+var doc_element = document.getElementById('modal_cards');
+    
     scheduleRef.get().then(function(result) {
-        result.forEach(function(e) {
-            alert(e);
-            console.log(e);
-        });
-        console.log(result.size);
+        if (result.size > 0) {
+          result.forEach(function (documentSnapshot) {
+            var data = documentSnapshot.data();
+            console.log(data);
+
+            var card = "<div class=\"card\">\n" +
+        "    <h3 class=\"title\">Arjun Karanam</h3>\n" +
+        "    <h3 class=\"title\">" + data.username + "</h3>\n" +
+        "    <h3 class=\"distance\">0.5 miles away</h3>\n" +
+        "<h3 class=\"distance\">" + data.carschedule + "</h3>\n"
+        "   </div>";
+        doc_element.innerHTML += card;
+            });
+        } else {
+          console.log('no documents found');
+        }
+ 
     });
 
     console.log(scheduleRef);
