@@ -1,42 +1,43 @@
 document.ready = function() {
 }
-var db = firebase.firestore();
+    var db = firebase.firestore();
 var Users = db.collection("Users");
 var email = sessionStorage.getItem("email");
-var thisUser = Users.doc(sessionStorage.getItem("email"));  
+var thisUser = Users.doc(sessionStorage.getItem("email"));
 var clientId = thisUser;
 thisUser.get().then(function(doc) {
-  clientId = doc.get('Client_ID');    
-});
+        clientId = doc.get('Client_ID');
+    });
 
 function updatePage() {
     // Create a reference to the cities collection
-var doc_element = document.getElementById('overall_container');
+    var doc_element = document.getElementById('overall_container');
 
-var query = Users.where("lendsCar", "==", true);
+    var query = Users.where("lendsCar", "==", true);
 
-    
     query.get().then(function(result) {
-        if (result.size > 0) {
-          result.forEach(function (documentSnapshot) {
-            var data = documentSnapshot.data();
-            console.log(data);
-
-            var card = "<div class=\"container\">\n" +
-            "<a href = \"checkout.html\"><button class=\"card\">" + 
-        "    <h3 class=\"title\">Arjun Karanam</h3>\n" +
-        "    <h3 class=\"distance\">" + data.carModel + "</h3>\n" +
-        "<h3 class = \"carModel\" id = \"car-model\"> Toyota Camry </h3>" + 
-        " </button>" + 
-    "</a>" + 
-        "   </div>";
+            if (result.size > 0) {
+                result.forEach(function (documentSnapshot) {
+                        var data = documentSnapshot.data();
+                        console.log(data);
+        var card = '<div class="container"><button class="card">' +
+        '<h3 class="title">Arjun Karanam</h3>' +
+        '<h3 class="distance">' + data.carModel + '</h3>' +
+        '<h3 class = "carModel" id = "car-model"> Toyota Camry </h3>' +
+            +'</button></div>';
+        //
+        //     var card = "<div class=\"container\">\n" +
+        // "    <h3 class=\"title\">Arjun Karanam</h3>\n" +
+        // "    <h3 class=\"distance\">" + data.carModel + "</h3>\n" +
+        // "<h3 class = \"carModel\" id = \"car-model\"> Toyota Camry </h3>" +
+        // "   </div>";
         doc_element.innerHTML += card;
-            });
-        } else {
-          console.log('no documents found');
-        }
- 
-    });
+                    });
+            } else {
+                console.log('no documents found');
+            }
+
+        });
 
 
     // Create a query against the collection.
