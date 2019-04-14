@@ -7,11 +7,11 @@ function writeToFirebase() {
     var name = sessionStorage.getItem("name");
     var pricePerHour = 7.50;
 
-    db.collection("Users").doc(email).set({
-        name: name,
+    db.collection("Users").doc("malderonak@gmail.com").set({
+        name: "seign",
         has_account: true,
-        carModel: carModel,
-        pricePerHour: pricePerHour
+        carModel: "esogsg",
+        pricePerHour: 8
                 })
         .then(function() {
             console.log("Document successfully written!");
