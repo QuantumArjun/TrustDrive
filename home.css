@@ -20,6 +20,22 @@ html{
 }
 
 
+img{
+    height: 200px;
+  width: 200px;
+   padding: 2em;
+   padding-right: 7em;
+   padding-left: 7em;
+   
+   top: 20px;
+  text-align: center;
+  background-color: #33383f;
+  border-radius: 7px;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+}
+
+
 .simple-form input {
   margin: .25rem;
   min-width: 200px;
@@ -70,9 +86,10 @@ body {
 .container{
   display: flex;
   flex-direction: column;
-  margin-top: 30vh;
+  margin-top: 5vh;
   height: 400px;
 }
+
 .card {
   padding: 2em;
   margin: auto;
@@ -155,4 +172,36 @@ label[for=user]{
 .card button:hover {
   color: #33383f;
   background-color: white;
+}
+
+
+.title{
+   font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    color:white;
+    background-color: #33383f;
+}
+.body_desc{
+     font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color:white;
+}
+.card1{
+  padding: 5px;
+  margin-bottom: 4em;
+  text-align: center;
+  background-color: #33383f;
+  border: 0;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+
+}
+button.card1{
+  border:0;
+  background-color: white;
+  color: #33383f;
+}
+#card1 button:hover {
+  color: white;
+  background-color: #33383f;
 }

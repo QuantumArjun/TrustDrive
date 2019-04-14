@@ -3,28 +3,13 @@
 <head>
 	<title> Testing Testing 123</title>
 	<link rel="stylesheet" type="text/css" href="lenderStyle.css">
-    <link rel="stylesheet" type="text/css" href="timepicker/jquery.timepicker.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-  <script>
-      // Initialize Firebase
-      var config = {
-          apiKey: "AIzaSyDu7MTm-N154EVmrgSV1722ELwe8qSJ220",
-          authDomain: "trust-drive-8c229.firebaseapp.com",
-          databaseURL: "https://trust-drive-8c229.firebaseio.com",
-          projectId: "trust-drive-8c229",
-          storageBucket: "trust-drive-8c229.appspot.com",
-          messagingSenderId: "431444258807"
-      };
-      firebase.initializeApp(config);
-  </script>
-  <script src="signUp.js"></script>
-
-    <script src="lender.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
     <script src="friends.js"></script>
+
 </head>
 <body onload = "updateFriends()">
   <div id="mySidenav" class="sidenav">
@@ -59,7 +44,7 @@ function closeNav() {
 
 <div id="container-floating">
 
-  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="openModal()">
+  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="openModal1()">
     <p class="plus">+</p>
     <img class="edit" src="http://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
   </div>
@@ -77,7 +62,7 @@ function closeNav() {
 				<h2 class="new_account_section_header">Add Friend: </h2>
 				<label for="user"><b>             &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</b></label>
 				<input type="text" placeholder="Enter E-Mail" name="email" id="email" required><br>
-				<button id= "checkout" type="submit" onclick="createFriend()">Request</button>
+				<button onclick="createFriend()">Request</button>
 		</div>
 		</form>
 
