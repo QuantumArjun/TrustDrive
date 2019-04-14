@@ -1,12 +1,14 @@
 var db = firebase.firestore();
-
+var Users = db.collection("Users");
+var email = sessionStorage.getItem("email");
+console.log(email);
+var thisUser = Users.doc(sessionStorage.getItem("email"));
+var scheduleRef = thisUser.doc("car_schedules");
 function updatePage() {
-
     // Create a reference to the cities collection
-    var scheduleRef = db.collection("car_schedules");
-
     scheduleRef.get().then(function(result) {
         result.forEach(function(e) {
+            alert(e);
             console.log(e);
         });
         console.log(result.size);
@@ -15,18 +17,18 @@ function updatePage() {
     console.log(scheduleRef);
 
     // Create a query against the collection.
-    var query = scheduleRef.where("username", "==", "undefined");
+    // var query = scheduleRef.where("username", "==", "undefined");
 
-    var qs = query.get().then(function(result) {
-        result.forEach(function(e) {
-            console.log(e);
-        });
-        console.log(result.size);
-    });
+    // var qs = query.get().then(function(result) {
+    //     result.forEach(function(e) {
+    //         console.log(e);
+    //     });
+    //     console.log(result.size);
+    // });
 
 
 
-    console.log(query.get());
+    // console.log(query.get());
 
 }
 
@@ -64,12 +66,12 @@ function createTimeSlot() {
     //modal.style.display = "none";
     console.log("here");
     var form_data = document.getElementById("dateAndTime").value;
-    var username = sessionStorage.getItem("username");
-   
+    var username = sessionStorage.getItem("email");
+    console.log(username);
     //doc_element.innerHTML += card;
     document.getElementById('create').style.display = "none";
 
-    db.collection("car_schedules").add({
+    thisUser.collection("car_schedules").add({
     username: username,
     carschedule: form_data
     })
