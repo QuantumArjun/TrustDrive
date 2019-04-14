@@ -3,12 +3,21 @@ html{
     background-image: linear-gradient(#00e174, #00f3f9);
     background-attachment: fixed;
     height: 100%;
+    width:100%;
 }
 
+.container{
+    margin: 0;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+
+}
 .card {
     width: 30vw;
     background-color: #33383f;
-    margin: 10em auto;
     align-content: center;
     border-radius: 7px;
     box-shadow: 0rem 0 2rem #000;
@@ -17,14 +26,6 @@ html{
     color: white;
     text-align: center;
     padding: 1em 2em;
-}
-
-.card h1 {
-    padding-top: 0.5em;
-}
-
-.card p {
-    padding: 0 1em;
 }
 
 button {
@@ -67,4 +68,31 @@ button:hover {
     min-width: 0;
     padding: 5px 0;
     vertical-align: bottom;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: white;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }

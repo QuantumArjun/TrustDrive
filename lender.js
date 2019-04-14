@@ -4,6 +4,8 @@ var email = sessionStorage.getItem("email");
 console.log(email);
 var thisUser = Users.doc(sessionStorage.getItem("email"));
 var scheduleRef = thisUser.collection("car_schedules");
+ document.getElementById('user').innerHTML = 'Your Contact: '+email;
+
 function updatePage() {
     // Create a reference to the cities collection
 var doc_element = document.getElementById('modal_cards');
@@ -15,9 +17,6 @@ var doc_element = document.getElementById('modal_cards');
             console.log(data);
 
             var card = "<div class=\"card\">\n" +
-        "    <h3 class=\"title\">Arjun Karanam</h3>\n" +
-        "    <h3 class=\"title\">" + data.username + "</h3>\n" +
-        "    <h3 class=\"distance\">0.5 miles away</h3>\n" +
         "<h3 class=\"distance\">" + data.carschedule + "</h3>\n"
         "   </div>";
         doc_element.innerHTML += card;
@@ -84,7 +83,7 @@ function createTimeSlot() {
     console.log(username);
     //doc_element.innerHTML += card;
     document.getElementById('create').style.display = "none";
-
+    document.location.href = 'http://localhost:1337/lender.html';
     thisUser.collection("car_schedules").add({
     username: username,
     carschedule: form_data
