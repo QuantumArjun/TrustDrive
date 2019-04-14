@@ -3,7 +3,6 @@
 <head>
 	<title> Testing Testing 123</title>
 	<link rel="stylesheet" type="text/css" href="lenderStyle.css">
-    <link rel="stylesheet" type="text/css" href="timepicker/jquery.timepicker.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
@@ -59,21 +58,12 @@ function closeNav() {
                <form id="new_account" class="simple-form tabcontent">
 				<h2 class="new_account_section_header">Add Friend: </h2>
 				<label for="user"><b>             &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-				<input type="text" placeholder="Enter E-Mail" name="email" required><br>
-				<button id= "checkout" type="submit" onclick="checkout.js">Request</button>
+				<input type="text" placeholder="Enter E-Mail" name="email" id="email" required><br>
+				<button id="submit" type="submit" onclick="createFriend()">Request</button>
 		</div>
 		</form>
 
-            <script>
-                $(function() {
-                    $('#durationExample').timepicker({
 
-                        'minTime': '2:00pm',
-                        'maxTime': '11:30pm',
-                        'showDuration': true
-                    });
-                });
-            </script>
         </div>
 
     </div>
@@ -90,9 +80,9 @@ function closeNav() {
       };
       firebase.initializeApp(config);
   </script>
-  <script src="signUp.js"></script>
+<!--  <script src="signUp.js"></script>-->
 
-    <script src="lender.js"></script>
+<!--    <script src="lender.js"></script>-->
 
 
 </body>
