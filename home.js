@@ -6,9 +6,12 @@
     storageBucket: "trust-drive-8c229.appspot.com",
     messagingSenderId: "431444258807"
   };
-  firebase.initializeApp(config);
-  var ui = new firebaseui.auth.AuthUI(firebase.auth());
-  var uiConfig = {
+  if( !firebase.apps.length){
+    var app = firebase.initializeApp(config);
+  }
+  this.ui = firebaseui.auth.AuthUI.getInstance() 
+  || new firebaseui.auth.AuthUI(firebase.auth());
+    var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function(authResult, redirectUrl) {
       // User successfully signed in.
@@ -36,62 +39,36 @@
   // Privacy policy url.
   privacyPolicyUrl: '<your-privacy-policy-url>'
 };
-
-
-   var app = firebase.initializeApp(config);
-   var db = firebase.firestore(app);
-  var docRef = db.collection("Users").doc("michaelhanyy");
-  console.log(docRef);
-
-function login(who) {
-   var app = firebase.initializeApp(config);
-   var db = firebase.firestore(app);
-  var docRef = db.collection("Users").doc("michaelhanyy");
-  console.log(docRef);
-  docRef.get().then(function(doc) {
-    if (doc.exists) {
-      document.location.href = 'http://localhost:1337/rider.html';
-    } else {
-        // doc.data() will be undefined in this case
-      document.location.href = 'http://localhost:1337/home.html';
-    }
-}).catch(function(error) {
-    console.log("Error getting document:", error);
+ui.start('#firebaseui-auth-container-lender', {
+        signInSuccessUrl: 'http://localhost:1337/lender.html',
+        signInOptions: [
+    // List of OAuth providers supported.
+         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        ],
+  // Other config options... 
+      });
+initApp = function() {
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {  
+   console.log("sdfsaf");
+       // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    user.getIdToken().then(function(accessToken) {
+    document.getElementById('sign-in-status').textContent = 'Signed in';
+    document.getElementById('sign-in').textContent = 'Sign out';
 });
-  if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
-    // The user is new, show them a fancy intro screen!
-    console.log("NEWWW");
-    document.location.href = 'http://localhost:1337/lender.html';
-  } else {
-    console.log("OLD");
 
-    document.location.href = 'http://localhost:1337/lender.html';
+function login() {
+  console.log("sdfsaf");
+  var db = firebase.firestore(app);
+  var docRef = db.collection("Users").doc("michaelhanyy");
+  docRef.get().then(function(doc) {
+    console.log(doc.data());
+    console.log(doc.get('has_account'));
 
-    // This is an existing user, show them a welcome back screen.
-  }
-  var username = document.getElementById('username' + who).value;
-  var password = document.getElementById('password' + who).value;
-  var fail = false;
-  
-  console.log(who);
-  if(username == "") {
-    document.getElementById('fail1' + who).innerHTML = "Error: Username can't be blank";
-    fail = true;
-  } else {
-    document.getElementById('fail1' + who).innerHTML = "";
-  }
-  if(password == "") {
-    document.getElementById('fail2' + who).innerHTML = "Error: Password can't be blank";
-    fail = true;
-  } else {
-    document.getElementById('fail2' + who).innerHTML = "";
-  }
-  if(fail) return;
-  saveUsername(username.value);
-  if(who == 'rider') window.location.replace("rider.html");
-  if(who == 'lender') window.location.replace("lender.html");
-}
-
+  });
 function saveUsername(username) {
     sessionStorage.setItem("username", username);
+}
 }
