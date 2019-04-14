@@ -197,6 +197,7 @@ label[for=user]{
 
 }
 button.card1{
+  margin-top: 15px;
   border:0;
   background-color: white;
   color: #33383f;
