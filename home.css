@@ -4,9 +4,12 @@ html{
   background-attachment: fixed;
 	height: 100%;
 }
-
+.section_header{
+  text-align: center;
+}
 .simple-form {
   display: flex;
+
   padding-bottom: 1.25rem;
 }
 
@@ -121,12 +124,12 @@ label[for=user]{
 /* Card Buttons */
 .card button {
   padding: 10px;
-  border: 1px solid white;
+  border: 0px;
   border-radius: 5px;
   background: none;
   color: white;
   transition-duration: 0.4s;
-  margin: 2em;
+
 
 }
 
