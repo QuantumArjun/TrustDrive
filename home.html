@@ -11,6 +11,8 @@
    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script src="home.js"></script>
+
 <script>
 
   // Initialize Firebase
@@ -52,52 +54,38 @@
   // Privacy policy url.
   privacyPolicyUrl: '<your-privacy-policy-url>'
 };
+
+   var app = firebase.initializeApp(config);
+   var db = firebase.firestore(app);
+  var docRef = db.collection("Users").doc("michaelhanyy");
+  console.log(docRef);
 </script>
 
  
 
 </head>
 <body>
-<div class="tab">
-	<button class="tablinks" onclick="openTab(event, 'rider')">I am a <i>Rider</i></button>
-	<button class="tablinks" onclick="openTab(event, 'lender')">I am a <i>Lender</i></button>
-	<button class="tablinks" onclick="openTab(event, 'new_account')">I need an account</button>
-</div>
+
 
 
 <div class="container">
 	<div class = "card" >
-		<div id = "rider" class="simple-form tabcontent">
-			<h2 class="rider section_header">Rider</h2>
-			<label for="user"><b></b></label>
-			<input type="text" placeholder="Enter Username" name="uname" id="usernamerider" required><span class="error" id="fail1rider"></span><br>
-			<label for="pass"><b></b></label>
-			<input type="password" placeholder="Enter Password" name="password" id="passwordrider" required><span class="error" id="fail2rider"></span><br>
+		<div class="simple-form">
+			<h2 class="section_header">Login</h2>
 			<script>
-			ui.start('#firebaseui-auth-container', {
-  			signInSuccessUrl: 'http://localhost:1337/rider.html',
+			ui.start('#firebaseui-auth-container-lender', {
+  			signInSuccessUrl: 'http://localhost:1337/lender.html',
   			signInOptions: [
     // List of OAuth providers supported.
    			 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
      		],
   // Other config options...
-
 			});
 			</script>
-			<a href = "rider.html"> 
-			<button id = "firebaseui-auth-container" onclick="login('rider')">
-				<a href = "rider.html"></a>
-				</button>
-		
-		</div>
-
-		<div id="lender" class="simple-form tabcontent">
-			<h2 class="lender section_header">Lender</h2>
-			<label for="user"><b></b></label>
-			<input type="text" placeholder="Enter Username" name="uname" id="usernamelender" required><span class="error" id="fail1lender"></span><br>
-			<label for="pass"><b></b></label>
-			<input type="password" placeholder="Enter Password" name="password" id="passwordlender" required><span class="error" id="fail2lender"></span><br>
-			<button onclick="login('lender')">Login</button>
+			<div id= "lender">
+				<label id = "firebaseui-auth-container-lender" 
+				onclick="login('lender')"></label>
+			</div>
 		</div>
 
 		<form id="new_account" class="simple-form tabcontent">
