@@ -40,22 +40,29 @@ var uiConfig = {
   // Privacy policy url.
   privacyPolicyUrl: '<your-privacy-policy-url>'
 };
+var currentUid = null;  
+firebase.auth().onAuthStateChanged(function(user) {  
+  // onAuthStateChanged listener triggers every time the user ID token changes.  
+  // This could happen when a new user signs in or signs out.  
+  // It could also happen when the current user ID token expires and is refreshed.  
+  if(user.username != undefined){
+    alert(user.username);
+  }
+  
+ });  
 
 
-ui.start('#firebaseui-auth-container-lender', {
-
-  signInSuccessUrl: 'http://localhost:1337/lender.html',
-  signInOptions: [
- // List of OAuth providers supported.
-  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  // Other config options... 
-});
 
 window.onload = function() {
-  alert("hi");
+  // The signed-in user info.
+  var token = ui.credential.accessToken;
+  var user = result.user;
   var db = firebase.firestore(app);
-  var docRef = db.collection("Users").doc("michaelhanyy");
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  alert
+  var docRef = db.collection("Users").doc();
   docRef.get().then(function(doc) {
     console.log(doc.data());
     alert(doc.get('has_account'));
