@@ -66,7 +66,7 @@ function createTimeSlot() {
     var form_data = document.getElementById("dateAndTime").value;
     var username = sessionStorage.getItem("username");
    
-    doc_element.innerHTML += card;
+    //doc_element.innerHTML += card;
     document.getElementById('create').style.display = "none";
 
     db.collection("car_schedules").add({

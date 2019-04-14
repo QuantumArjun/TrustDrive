@@ -24,7 +24,7 @@
         <p>Do you want your direct friends (1st order connections) only to drive your car, or are you find with friends of friends (2nd order)?</p>
         <input class="radio" type="radio" name="order" value="first">1st order only
         <input class="radio" type="radio" name="order" value="second">Up to 2nd order friends<br>
-        <a href="lender.html"><button id= "submit" type="submit" onclick="writeToFirebase()">Submit</button></a>
+        <a href="javascript:delay('lender.html')"><button id= "submit" type="submit" onclick="writeToFirebase()">Submit</button></a>
     </div>
 </div>
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
@@ -40,5 +40,7 @@
     };
     firebase.initializeApp(config);
 </script>
+<script src="signUp.js"></script>
+</body>
 </body>
 </html>
