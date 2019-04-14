@@ -1,4 +1,5 @@
 var db = firebase.firestore();
+
     function writeToFirebase() {
     var carModel = document.getElementById("model").value;
     var address = document.getElementById("address").value;
@@ -6,14 +7,10 @@ var db = firebase.firestore();
     user = "Ronak";
     var inUse = false;
     var pricePerHour = 14.50;
-    alert("Point1");
-
-    console.log("Reached")
-
 
     db.collection("User").add({
-            username: "works",
-                carschedule: "works"
+            username: "works5",
+                carschedule: "works6"
                 })
     .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
@@ -24,19 +21,5 @@ var db = firebase.firestore();
 }
 
 function delay (URL) {
-    setTimeout( function() { window.location = URL }, 500 );
-        db.collection("Users").doc("michaelhanyy").set({
-                model: "EOGIN",
-                address: "sldgn",
-                inUse: false,
-                pricePerHour: 8
-            })
-
-            .then(function() {
-                    console.log("Document successfully written!");
-                })
-            .catch(function(error) {
-                    console.error("Error writing document: ", error);
-                });
-    alert("Point1");
+    setTimeout( function() { window.location = URL }, 1000);
 }
