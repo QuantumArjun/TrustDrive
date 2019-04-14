@@ -5,7 +5,13 @@ var Users = db.collection("Users");
 var email = sessionStorage.getItem("email");
 var thisUser = Users.doc(sessionStorage.getItem("email"));
 var clientId = thisUser;
-thisUser.get().then(function(doc) {
+// thisUser.get().then(function(doc) {
+//         clientId = doc.get('Client_ID');
+//     });
+
+//   clientId = doc.get('Client_ID'); 
+//   sessionStorage.setItem("clientId", clientId);
+// });
 
 
 function updatePage() {
