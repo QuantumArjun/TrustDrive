@@ -74,15 +74,46 @@ body {
   height: 400px;
 }
 .card {
-  display: flex;
-  width: 35vw;
+  padding: 2em;
+  margin: auto;
+  text-align: center;
   background-color: #33383f;
-  justify-content: center;
   border-radius: 7px;
   box-shadow: 0rem 0 2rem #000;
 /*   margin-left: -50px; */
   transition: 0.4s ease-out;
-  margin-bottom: 3em;
+
+}
+
+.card i {
+  font-size: 10em;
+  color: #cbcbcb;
+  display:block;
+  width: 100%;
+}
+.card button {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+  margin: 0;
+}
+
+button {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  transition-duration: 0.4s;
+  margin: 2em;
+
+}
+
+button:hover {
+  color: #33383f;
+  background-color: white;
 }
 
 .tabcontent {
@@ -102,17 +133,6 @@ label[for=user]{
 
 }
 
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  color:white;
-  border: none;
-  cursor: pointer;
-  padding: 28px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-  width: 33%;
-}
 
 .tab button:hover {
   background-color: #ddd;
@@ -125,7 +145,6 @@ label[for=user]{
 
 /* Card Buttons */
 .card button {
-  padding: 10px;
   border: 0px;
   border-radius: 5px;
   background: none;

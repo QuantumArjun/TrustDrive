@@ -43,7 +43,7 @@ function login(user) {
       document.location.href = "rider.html"
     }else{
       sessionStorage.setItem("email", user.email);
-      sessionStorage.setItem("email", user.displayName);
+      sessionStorage.setItem("name", user.displayName);
       document.location.href = "signUp.html"
     }
   });

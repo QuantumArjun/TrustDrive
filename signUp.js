@@ -8,9 +8,9 @@ function writeToFirebase() {
     var pricePerHour = 7.50;
 
     db.collection("Users").doc("malderonak@gmail.com").set({
-        name: "seign",
+        name: name,
         has_account: true,
-        carModel: "esogsg",
+        carModel: carModel,
         pricePerHour: 8
                 })
         .then(function() {
