@@ -8,12 +8,12 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
 
 	<title>
-		Airbnb for Cars
+		Airbnb for Cars2
 	</title>
 </head>
 
 
-<body onload = "">
+<body onload = "updatePage()">
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -37,18 +37,19 @@ function closeNav() {
 }
 </script>
 
-
 	<div class = "carAvailability">
 		Cars Available
 	</div>
-<div class="container">
+
+<div id = "overall_container">
+	<div class="container">
   <a href = "checkout.html"><button class="card">
     <h3 class="title" id = "car-name">Arjun Karanam</h3>
     <h3 class="distance" id = "car-distance">0.5 miles away</h3>
     <h3 class = "carModel" id = "car-model"> Toyota Camry</h3>
    </button>
-</a>
-
+	</a>
+	</div>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
@@ -67,39 +68,4 @@ function closeNav() {
     <script src = "riderCode.js"></script>
 </body>
 
-
-<!--
-	 <div class="bar">
-      <div class="emptybar"></div>
-      <div class="filledbar"></div>
-    </div>
-
-
-<!DOCTYPE html>
-
-
-<html>
-<head>
-	<title> AirBnb For your car</title>
-	<link rel="stylesheet" type="text/css" href="riderStyle.css" />
-	<body>
-	 <div class = "container">
-	 	Cars available now:
-	 </div>
-	 <div class = "card">
-
-	 	<var class = "carRiderFriend">
-	 		Arjun Karanam
-	 	</var>
-	 	<var class = "carRiderCar">
-	 		Toyata Camry
-	 	</var>
-	 	<var class = "carRiderDistance">
-	 		0.4 miles away
-	 	</var>
-	 </div>
-	</body>
-
-</head>
 </html>
-
