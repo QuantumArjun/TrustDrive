@@ -18,6 +18,7 @@ html{
 	color: red;
 }
 
+
 .simple-form input {
   margin: .25rem;
   min-width: 200px;
@@ -129,8 +130,6 @@ label[for=user]{
   background: none;
   color: white;
   transition-duration: 0.4s;
-
-
 }
 
 .card button:hover {
