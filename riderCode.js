@@ -26,9 +26,8 @@ function updatePage() {
                         var data = documentSnapshot.data();
                         console.log(data);
         var card = '<div class="container"><button class="card">' +
-        '<h3 class="title">Arjun Karanam</h3>' +
-        '<h3 class="distance">' + data.carModel + '</h3>' +
-        '<h3 class = "carModel" id = "car-model"> Toyota Camry </h3>' +
+        '<h3 class="title">' + data.Name + '</h3>' +
+        '<h3 class="distance">' + data.carModel + '</h3>'
             +'</button></div>';
         //
         //     var card = "<div class=\"container\">\n" +
@@ -61,7 +60,6 @@ function updatePage() {
 
 }
 
-<<<<<<< HEAD
 const smartcar = new Smartcar({
   clientId: clientId,
   redirectUri: 'https://javascript-sdk.smartcar.com/redirect-2.1.1?app_origin=http://localhost:1337 ',
@@ -75,7 +73,7 @@ const smartcar = new Smartcar({
     sendToBackend(code);
   },
 });
-=======
+
 //const smartcar = new Smartcar({
 //   clientId: clientId,
 //   redirectUri: '<your-redirect-uri>',
@@ -87,9 +85,8 @@ const smartcar = new Smartcar({
 //     // handle the returned code by sending it to your back-end server
 //     sendToBackend(code);
 //   },
-<<<<<<< HEAD
+
 // });
-=======
+
 // });
->>>>>>> 97496eb3aa6d96b335cc5a24c1211a62c63d6d4c
->>>>>>> 91e4e164dcc5e0875ba507a1981d21886202bcf8
+
