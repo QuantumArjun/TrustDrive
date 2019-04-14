@@ -15,20 +15,16 @@ const smartcar = new Smartcar({
       //sendToBackend(code);
     },
   });
-smartcar.getVehicleIds('{token}')
-  .then(function(response) {
-    console.log(response);
-  });
 // smartcar.odometer().then(function(response) {
 //   console.log(response);
 // });
 
+function authorize() {
+  // TODO: Authorization Step 2a: Launch the authorization flow
+}
 function checkout(){
-  smartcar.openDialog();
-
-
-
-
+  smartcar.openDialog({forcePrompt: true});
+    //.exchangeCode(client_Id);
   var doc_element = document.getElementById('check-card');
   //  modal.append("Testing");
   //modal.style.display = "none";

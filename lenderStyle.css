@@ -4,7 +4,13 @@ html{
   background-attachment: fixed;
   height: 100%;
 }
-
+div.top_section{
+  font-family: 'Helvetica','Open Sans', sans-serif;
+  font-size: 40px;
+}
+#modal_cards{
+  text-align: center;
+}
 body{
   font-family: 'Open Sans', sans-serif;
     display: flex;
@@ -30,13 +36,14 @@ h1{
 #presentation{
   width: 480px;
   height: 120px;
-  padding: 20px;
+  padding: 40px;
   margin: auto;
   background-color: #33383f;
   margin-top: 10px;
+  margin-bottom: 30px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   transition: all 0.3s;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 #presentation:hover{
@@ -51,9 +58,11 @@ h1{
   margin: 20px;
   background-color: #33383F;
   margin-top: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  transition: all 0.3s;
-  border-radius: 3px;
+  border-radius: 7px;
+  box-shadow: 0rem 0 1rem #000;
+  transition: 0.4s ease-out;
+  position: relative;
+  text-align: center;
 }
 
 .card:hover{
@@ -61,6 +70,50 @@ h1{
   transition: all 0.3s;
   transform: translateZ(10px);
 }
+
+
+.card:not(:first-child) {
+  margin-right: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  transition: 0.2s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+
+  transition: 0.4s ease-out;
+}
+
+
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
 
 #floating-button{
   width: 55px;
