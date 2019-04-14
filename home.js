@@ -36,12 +36,15 @@ function fb_login() {
 }
 
 function login(user) {
-  alert("hi");
   var db = firebase.firestore(app);
-  var docRef = db.collection("Users").doc("michaelhanyy");
+  var docRef = db.collection("Users").doc(user.email);
   docRef.get().then(function(doc) {
-    console.log(doc.data());
-    alert(doc.get('has_account'));
+    if(doc.get('has_account')){
+      document.location.href = "http://localhost:1337/rider.html"
+    }else{  
+      document.location.href = "http://localhost:1337/signUp.html"
+      //add to data base
+    }
   });
 }
 
