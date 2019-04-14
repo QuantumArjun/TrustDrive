@@ -27,7 +27,8 @@ function updatePage() {
                         console.log(data);
         var card = '<div class="container"><button class="card">' +
         '<h3 class="title">' + data.Name + '</h3>' +
-        '<h3 class="distance">' + data.carModel + '</h3>'
+        '<h3 class="model">' + data.carModel + '</h3>' +
+        '<h3 class="distance">' + data.distance + " miles" + '</h3>' 
             +'</button></div>';
         //
         //     var card = "<div class=\"container\">\n" +

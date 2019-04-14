@@ -4,7 +4,6 @@ function updateFriends() {
 
     var email = sessionStorage.getItem("email");
     var doc_element = document.getElementById('deck');
-    alert(email);
     var documentReference = db.collection('Users').doc(email);
     documentReference.get().then(function(documentSnapshot) {
         if (documentSnapshot.exists) {
