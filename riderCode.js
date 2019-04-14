@@ -23,9 +23,12 @@ var query = Users.where("lendsCar", "==", true);
             console.log(data);
 
             var card = "<div class=\"container\">\n" +
+            "<a href = \"checkout.html\"><button class=\"card\">" + 
         "    <h3 class=\"title\">Arjun Karanam</h3>\n" +
         "    <h3 class=\"distance\">" + data.carModel + "</h3>\n" +
         "<h3 class = \"carModel\" id = \"car-model\"> Toyota Camry </h3>" + 
+        " </button>" + 
+    "</a>" + 
         "   </div>";
         doc_element.innerHTML += card;
             });
