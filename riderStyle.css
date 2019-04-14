@@ -32,8 +32,10 @@ body {
 
 .card {
   display: flex;
-  height: 180px;
+  height: 150px;
   width: 45vw;
+  padding: 0px;
+  border: 0px;
   background-color: #33383f;
   border-radius: 7px;
   box-shadow: 0rem 0 2rem #000;
@@ -63,32 +65,42 @@ body {
   color: white;
   font-weight: 300;
   position: absolute;
+  font-size: 21px;
   left: 20px;
-  top: 15px;
+  top: 7px;
+
 }
 .distance{
   color: white;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 200;
   position: absolute;
   left: 20px;
-  top: 50px;
+  top: 55px;
 }
 .carModel{
   color: white;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 200;
   position: absolute;
   left: 20px;
-  top: 70px;
+  top: 75px;
+}
+.model{
+  color: white;
+  font-size: 15px;
+  font-weight: 200;
+  position: absolute;
+  left: 20px;
+  top: 75px;
 }
 .Ownernotes{
   color: white;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 200;
   position: absolute;
   left: 20px;
-  top: 90px;
+  top: 95px;
 }
 
 
