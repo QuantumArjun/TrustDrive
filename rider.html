@@ -9,13 +9,14 @@
 </head>
 
 
-<body>
+<body onload = "updateCars()">
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="friends.html">Friends</a>
   <a href="rider.html">Ride a Car</a>
-  <a href="lender.html">Lend Your Car</a>
+  <a href="new_lender.html">List My Car</a>
+  <a href="lender.html">Manage My Car</a>
   <a href="help.html">Help</a>
   <a href="home.html">Sign Out</a>
 </div>
@@ -38,30 +39,12 @@ function closeNav() {
 	</div>
 <div class="container">
   <a href = "checkout.html"><button class="card">
-    <h3 class="title">Arjun Karanam</h3>
-    <h3 class="distance">0.5 miles away</h3>
-    <h3 class = "carModel" > Toyota Camry</h3>
-    <h3 class = "Ownernotes" >  Special Notes: Hey the Trunk does not work</h3>
+    <h3 class="title" id = "car-name">Arjun Karanam</h3>
+    <h3 class="distance" id = "car-distance">0.5 miles away</h3>
+    <h3 class = "carModel" id = "car-model"> Toyota Camry</h3>
    </button>
 </a>
-   <div class="container">
-    <a href = "checkout.html"><button class="card">
-    <h3 class="title">Arjun Karanam</h3>
-    <h3 class="distance">0.5 miles away</h3>
-    <h3 class = "carModel" > Toyota Camry</h3>
-    <h3 class = "Ownernotes" >  Special Notes: Hey the Trunk does not work</h3>
-   </div>
-   </button>
-</a>
-<div class="container">
-    <a href = "checkout.html"><button class="card">
-    <h3 class="title">Ronak Malde</h3>
-    <h3 class="distance">0.9 miles away</h3>
-    <h3 class = "carModel" > Toyota Camry</h3>
-    <h3 class = "Ownernotes" >  Special Notes: Hey the Trunk does not work</h3>
-   </button>
-</a>
-    </div>
+
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>

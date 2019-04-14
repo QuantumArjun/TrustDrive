@@ -1,3 +1,13 @@
+function updatePage() {
+
+    var car_name = document.getElementById("lentCar");
+    car_name.innerHTML = "db";
+
+    var car_name = document.getElementById("carStatus");
+    car_name.innerHTML = "db";
+
+}
+
 function openModal() {
     // Get the modal
     var modal = document.getElementById('create');
