@@ -1,10 +1,5 @@
 var firebase = require("firebase");
 var db = firebase.firestore();
-
-<<<<<<< HEAD
-=======
-
->>>>>>> d306f085e7624fbd0ec6e29b541a3b72027e6812
     function writeToFirebase() {
     var carModel = document.getElementById("model").value;
     var address = document.getElementById("address").value;
@@ -14,8 +9,6 @@ var db = firebase.firestore();
     var pricePerHour = 14.50;
     alert("Point1");
 
-
-<<<<<<< HEAD
     console.log("Reached")
 
 
@@ -33,7 +26,6 @@ var db = firebase.firestore();
 
 function delay (URL) {
     setTimeout( function() { window.location = URL }, 500 );
-=======
         db.collection("Users").doc("michaelhanyy").set({
                 model: "EOGIN",
                 address: "sldgn",
