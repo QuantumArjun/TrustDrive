@@ -20,8 +20,8 @@ function fb_login() {
     // The signed-in user info.
     var user = result.user;
     login(user);
-    console.log(user.email);
-    console.log(user.displayName);
+    // console.log(user.email);
+    // console.log(user.displayName);
     // ...
   }).catch(function(error) {
     // Handle Errors here.
@@ -35,18 +35,7 @@ function fb_login() {
   });
 }
 
-//
-// window.onload = function() {
-//   alert("hi");
-//   var db = firebase.firestore(app);
-//   var docRef = db.collection("Users").doc("michaelhanyy");
-//   docRef.get().then(function(doc) {
-//     console.log(doc.data());
-//     alert(doc.get('has_account'));
-//   });
-// };
-
-function login() {
+function login(user) {
   alert("hi");
   var db = firebase.firestore(app);
   var docRef = db.collection("Users").doc("michaelhanyy");
