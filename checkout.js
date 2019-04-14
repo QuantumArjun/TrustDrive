@@ -23,7 +23,7 @@ function authorize() {
   // TODO: Authorization Step 2a: Launch the authorization flow
 }
 function checkout(){
-  smartcar.openDialog({forcePrompt: true});
+  //smartcar.openDialog({forcePrompt: true});
     //.exchangeCode(client_Id);
   var doc_element = document.getElementById('check-card');
   //  modal.append("Testing");
