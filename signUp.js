@@ -6,17 +6,18 @@ var db = firebase.firestore();
     var user = sessionStorage.getItem("username");
     user = "Ronak";
     var inUse = false;
-    var pricePerHour = 14.50;
+    var pricePerHour = 7.50;
 
-    db.collection("User").add({
-            username: "works5",
-                carschedule: "works6"
+    db.collection("Users").doc("Ronak").set({
+            carModel: carModel,
+            inUse: inUse,
+            pricePerHour: pricePerHour
                 })
-    .then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
+        .then(function() {
+            console.log("Document successfully written!");
         })
-    .catch(function(error) {
-            console.error("Error adding document: ", error);
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
         });
 }
 
