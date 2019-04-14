@@ -2,12 +2,14 @@
 <html>
 <head>
 	<title> Testing Testing 123</title>
-	<link rel="stylesheet" type="text/css" href="friendStyle.css">
+	<link rel="stylesheet" type="text/css" href="lenderStyle.css">
     <link rel="stylesheet" type="text/css" href="timepicker/jquery.timepicker.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="timepicker/jquery.timepicker.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script src="friends.js"></script>
 </head>
-<body>
+<body onload = "updateFriends()">
   <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="friends.html">Friends</a>
@@ -29,10 +31,9 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 </script>
+  <h2>My Friends</h2>
+<div id="deck">
 
-	<div id="presentation" data-toggle="tooltip">
-        <h1>Friend 1</h1>
-        <h3>Cars: </h3>
 </div>
 
 <div class = "openTimes">
@@ -76,8 +77,20 @@ function closeNav() {
         </div>
 
     </div>
-
-
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyDu7MTm-N154EVmrgSV1722ELwe8qSJ220",
+          authDomain: "trust-drive-8c229.firebaseapp.com",
+          databaseURL: "https://trust-drive-8c229.firebaseio.com",
+          projectId: "trust-drive-8c229",
+          storageBucket: "trust-drive-8c229.appspot.com",
+          messagingSenderId: "431444258807"
+      };
+      firebase.initializeApp(config);
+  </script>
+  <script src="signUp.js"></script>
 
     <script src="lender.js"></script>
 

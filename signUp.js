@@ -6,12 +6,14 @@ function writeToFirebase() {
     var email = sessionStorage.getItem("email");
     var name = sessionStorage.getItem("name");
     var pricePerHour = 7.50;
+    var friends = [];
 
     db.collection("Users").doc("email").set({
         name: name,
         has_account: true,
         carModel: carModel,
-        pricePerHour: 8
+        pricePerHour: 8,
+        friends: friends
                 })
         .then(function() {
             console.log("Document successfully written!");
