@@ -12,7 +12,7 @@
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
     <script src="home.js"></script>
-    
+
 <script>
 
   // Initialize Firebase
@@ -54,6 +54,11 @@
   // Privacy policy url.
   privacyPolicyUrl: '<your-privacy-policy-url>'
 };
+
+   var app = firebase.initializeApp(config);
+   var db = firebase.firestore(app);
+  var docRef = db.collection("Users").doc("michaelhanyy");
+  console.log(docRef);
 </script>
 
  
@@ -78,7 +83,8 @@
 			});
 			</script>
 			<div id= "lender">
-				<label id = "firebaseui-auth-container-lender" onclick="login('lender')"></label>
+				<label id = "firebaseui-auth-container-lender" 
+				onclick="login('lender')"></label>
 			</div>
 		</div>
 

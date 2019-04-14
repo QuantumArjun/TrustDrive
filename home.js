@@ -38,14 +38,22 @@
 };
 
 
+   var app = firebase.initializeApp(config);
+   var db = firebase.firestore(app);
+  var docRef = db.collection("Users").doc("michaelhanyy");
+  console.log(docRef);
+
 function login(who) {
-  var docRef = db.collection("User").doc("michaelhanyy");
+   var app = firebase.initializeApp(config);
+   var db = firebase.firestore(app);
+  var docRef = db.collection("Users").doc("michaelhanyy");
+  console.log(docRef);
   docRef.get().then(function(doc) {
     if (doc.exists) {
-        console.log("Document data:", doc.data());
+      document.location.href = 'http://localhost:1337/rider.html';
     } else {
         // doc.data() will be undefined in this case
-        console.log("No such document!");
+      document.location.href = 'http://localhost:1337/home.html';
     }
 }).catch(function(error) {
     console.log("Error getting document:", error);
