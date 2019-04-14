@@ -68,11 +68,10 @@ function createFriend () {
         "<h3 class=\"friendName\">" + friendName + "</h3>\n" +
         "   </div>";
 
-
     var email = sessionStorage.getItem("email");
     var documentReference = db.collection('Users').doc(email);
     documentReference.update({
-        friends: firebase.firestore.FieldValue.arrayUnion(friendName)
+        friends: firebase.firestore.FieldValue.arrayUnion(friendName);
     });
 
     doc_element.innerHTML += card;
