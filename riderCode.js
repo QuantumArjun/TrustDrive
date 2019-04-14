@@ -25,11 +25,11 @@ function updatePage() {
                 result.forEach(function (documentSnapshot) {
                         var data = documentSnapshot.data();
                         console.log(data);
-        var card = '<div class="container"><button class="card">' +
+        var card = '<div class="container"><a href = "checkout.html"><button class="card">' +
         '<h3 class="title">' + data.Name + '</h3>' +
         '<h3 class="model">' + data.carModel + '</h3>' +
         '<h3 class="distance">' + data.distance + " miles" + '</h3>' 
-            +'</button></div>';
+            +'</button></a></div>';
         //
         //     var card = "<div class=\"container\">\n" +
         // "    <h3 class=\"title\">Arjun Karanam</h3>\n" +
