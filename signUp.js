@@ -1,4 +1,3 @@
-var firebase = require("firebase");
 var db = firebase.firestore();
     function writeToFirebase() {
     var carModel = document.getElementById("model").value;
