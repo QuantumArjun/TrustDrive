@@ -3,26 +3,30 @@
     authDomain: "trust-drive-8c229.firebaseapp.com",
     databaseURL: "https://trust-drive-8c229.firebaseio.com",
     projectId: "trust-drive-8c229",
-    storageBucket: "trust-drive-8c229.appspot.com",
-    messagingSenderId: "431444258807"
-  };
-  firebase.initializeApp(config);
-  var ui = new firebaseui.auth.AuthUI(firebase.auth());
-  var uiConfig = {
+  storageBucket: "trust-drive-8c229.appspot.com",
+  messagingSenderId: "431444258807"
+};
+if( !firebase.apps.length){
+  var app = firebase.initializeApp(config);
+}
+this.ui = firebaseui.auth.AuthUI.getInstance() 
+|| new firebaseui.auth.AuthUI(firebase.auth());
+var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function(authResult, redirectUrl) {
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
-      console.log(redirectUrl);
+      console.log("TEST");
+      login();
       return false;
-    },
-    uiShown: function() {
+  },
+  uiShown: function() {
       // The widget is rendered.
       // Hide the loader.
 
-      document.getElementById('loader').style.display = 'none';
-    }
+    document.getElementById('loader').style.display = 'none';
+  }
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
@@ -38,58 +42,34 @@
 };
 
 
-   var app = firebase.initializeApp(config);
-   var db = firebase.firestore(app);
-  var docRef = db.collection("Users").doc("michaelhanyy");
-  console.log(docRef);
+ui.start('#firebaseui-auth-container-lender', {
 
-function login(who) {
-   var app = firebase.initializeApp(config);
-   var db = firebase.firestore(app);
-  var docRef = db.collection("Users").doc("michaelhanyy");
-  console.log(docRef);
-  docRef.get().then(function(doc) {
-    if (doc.exists) {
-      document.location.href = 'http://localhost:1337/rider.html';
-    } else {
-        // doc.data() will be undefined in this case
-      document.location.href = 'http://localhost:1337/home.html';
-    }
-}).catch(function(error) {
-    console.log("Error getting document:", error);
+  signInSuccessUrl: 'http://localhost:1337/lender.html',
+  signInOptions: [
+ // List of OAuth providers supported.
+  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+  ],
+  // Other config options... 
 });
-  if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
-    // The user is new, show them a fancy intro screen!
-    console.log("NEWWW");
-    document.location.href = 'http://localhost:1337/lender.html';
-  } else {
-    console.log("OLD");
 
-    document.location.href = 'http://localhost:1337/lender.html';
+window.onload = function() {
+  alert("hi");
+  var db = firebase.firestore(app);
+  var docRef = db.collection("Users").doc("michaelhanyy");
+  docRef.get().then(function(doc) {
+    console.log(doc.data());
+    alert(doc.get('has_account'));
+  });
+};
 
-    // This is an existing user, show them a welcome back screen.
-  }
-  var username = document.getElementById('username' + who).value;
-  var password = document.getElementById('password' + who).value;
-  var fail = false;
-  
-  console.log(who);
-  if(username == "") {
-    document.getElementById('fail1' + who).innerHTML = "Error: Username can't be blank";
-    fail = true;
-  } else {
-    document.getElementById('fail1' + who).innerHTML = "";
-  }
-  if(password == "") {
-    document.getElementById('fail2' + who).innerHTML = "Error: Password can't be blank";
-    fail = true;
-  } else {
-    document.getElementById('fail2' + who).innerHTML = "";
-  }
-  if(fail) return;
-  saveUsername(username.value);
-  if(who == 'rider') window.location.replace("rider.html");
-  if(who == 'lender') window.location.replace("lender.html");
+function login() {
+  alert("hi");
+  var db = firebase.firestore(app);
+  var docRef = db.collection("Users").doc("michaelhanyy");
+  docRef.get().then(function(doc) {
+    console.log(doc.data());
+    alert(doc.get('has_account'));
+  });
 }
 
 function saveUsername(username) {

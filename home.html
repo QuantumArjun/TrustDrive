@@ -12,55 +12,6 @@
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
     <script src="home.js"></script>
-
-<script>
-
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDu7MTm-N154EVmrgSV1722ELwe8qSJ220",
-    authDomain: "trust-drive-8c229.firebaseapp.com",
-    databaseURL: "https://trust-drive-8c229.firebaseio.com",
-    projectId: "trust-drive-8c229",
-    storageBucket: "trust-drive-8c229.appspot.com",
-    messagingSenderId: "431444258807"
-  };
-  firebase.initializeApp(config);
-  var ui = new firebaseui.auth.AuthUI(firebase.auth());
-  var uiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-      console.log(redirectUrl);
-      return false;
-    },
-    uiShown: function() {
-      // The widget is rendered.
-      // Hide the loader.
-
-      document.getElementById('loader').style.display = 'none';
-    }
-  },
-  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-  signInFlow: 'popup',
-  signInSuccessUrl: 'http://localhost:1337/rider.html',
-  signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  // Terms of service url.
-  tosUrl: '<your-tos-url>',
-  // Privacy policy url.
-  privacyPolicyUrl: '<your-privacy-policy-url>'
-};
-
-   var app = firebase.initializeApp(config);
-   var db = firebase.firestore(app);
-  var docRef = db.collection("Users").doc("michaelhanyy");
-  console.log(docRef);
-</script>
-
  
 
 </head>
@@ -72,19 +23,9 @@
 	<div class = "card" >
 		<div class="simple-form">
 			<h2 class="section_header">Login</h2>
-			<script>
-			ui.start('#firebaseui-auth-container-lender', {
-  			signInSuccessUrl: 'http://localhost:1337/lender.html',
-  			signInOptions: [
-    // List of OAuth providers supported.
-   			 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-     		],
-  // Other config options...
-			});
-			</script>
-			<div id= "lender">
-				<label id = "firebaseui-auth-container-lender" 
-				onclick="login('lender')"></label>
+			<div id= "lender" >
+				<label id = "firebaseui-auth-container-lender" onclick="Login()" 
+				></label>
 			</div>
 		</div>
 
