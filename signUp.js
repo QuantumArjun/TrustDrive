@@ -1,9 +1,10 @@
 var db = firebase.firestore();
 
-    function writeToFirebase() {
+function writeToFirebase() {
     var carModel = document.getElementById("model").value;
     var address = document.getElementById("address").value;
-    var user = sessionStorage.getItem("username");
+    var user = sessionStorage.getItem("user").email;
+    var name = sessionStorage.getItem("user").displayName;
     user = "Ronak";
     var inUse = false;
     var pricePerHour = 7.50;
