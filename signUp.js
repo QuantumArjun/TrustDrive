@@ -13,7 +13,8 @@ function writeToFirebase() {
         has_account: true,
         carModel: carModel,
         pricePerHour: 8,
-        friends: friends
+        friends: friends,
+        distance: Math.floor(Math.random() * 10)
                 })
         .then(function() {
             console.log("Document successfully written!");
