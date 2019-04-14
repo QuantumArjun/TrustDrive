@@ -3,13 +3,17 @@
 	<link rel="stylesheet" type="text/css" href="riderStyle.css" />
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+
 	<title>
 		Airbnb for Cars
 	</title>
 </head>
 
 
-<body onload = "updateCars()">
+<body onload = "">
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -60,6 +64,7 @@ function closeNav() {
     };
     firebase.initializeApp(config);
 </script>
+    <script src = "riderCode.js"></script>
 </body>
 
 
