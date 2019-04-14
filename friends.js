@@ -1,4 +1,5 @@
 var db = firebase.firestore();
+var emails= [];
 
 function updateFriends() {
 
@@ -10,6 +11,7 @@ function updateFriends() {
             var data = documentSnapshot.data();
             var friends = data.friends;
             friends.forEach(function(element) {
+                emails.push(element);
                 var card = "<div class=\"card\">\n" +
                 "<h3 class=\"friendName\">" + element + "</h3>\n" +
                 "   </div>";
@@ -23,13 +25,5 @@ function updateFriends() {
 }
 
 function updateCarInfo() {
-    var elements = document.getElementsByClassName("friendName");
-    console.log(elements);
-    var emails= [];
-    for (i = 0; i < elements.length; i++) {
-        console.log(i);
-        console.log(elements.item(i));
-        emails += elements.item(i).innerText;
-    }
     console.log(emails);
 }
