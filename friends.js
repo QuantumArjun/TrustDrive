@@ -24,7 +24,13 @@ function updateFriends() {
 }
 
 function updateCarInfo() {
-    var emails = document.getElementsByClassName("friendName");
-    alert("we mde it");
+    var elements = document.getElementsByClassName("friendName");
+    console.log(elements);
+    var emails= [];
+    for (i = 0; i < elements.length; i++) {
+        console.log(i);
+        console.log(elements.item(i));
+        emails += elements.item(i).innerText;
+    }
     console.log(emails);
 }
