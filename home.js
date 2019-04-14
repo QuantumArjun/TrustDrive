@@ -44,8 +44,6 @@ function login(user) {
     }else{
       sessionStorage.setItem("user", user);
       document.location.href = "signUp.html"
-
-      //add to data base
     }
   });
 }
