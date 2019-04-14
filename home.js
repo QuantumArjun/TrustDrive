@@ -3,29 +3,30 @@
     authDomain: "trust-drive-8c229.firebaseapp.com",
     databaseURL: "https://trust-drive-8c229.firebaseio.com",
     projectId: "trust-drive-8c229",
-    storageBucket: "trust-drive-8c229.appspot.com",
-    messagingSenderId: "431444258807"
-  };
-  if( !firebase.apps.length){
-    var app = firebase.initializeApp(config);
-  }
-  this.ui = firebaseui.auth.AuthUI.getInstance() 
-  || new firebaseui.auth.AuthUI(firebase.auth());
-    var uiConfig = {
+  storageBucket: "trust-drive-8c229.appspot.com",
+  messagingSenderId: "431444258807"
+};
+if( !firebase.apps.length){
+  var app = firebase.initializeApp(config);
+}
+this.ui = firebaseui.auth.AuthUI.getInstance() 
+|| new firebaseui.auth.AuthUI(firebase.auth());
+var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function(authResult, redirectUrl) {
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
-      console.log(redirectUrl);
+      console.log("TEST");
+      login();
       return false;
-    },
-    uiShown: function() {
+  },
+  uiShown: function() {
       // The widget is rendered.
       // Hide the loader.
 
-      document.getElementById('loader').style.display = 'none';
-    }
+    document.getElementById('loader').style.display = 'none';
+  }
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
@@ -39,36 +40,38 @@
   // Privacy policy url.
   privacyPolicyUrl: '<your-privacy-policy-url>'
 };
+
+
 ui.start('#firebaseui-auth-container-lender', {
-        signInSuccessUrl: 'http://localhost:1337/lender.html',
-        signInOptions: [
-    // List of OAuth providers supported.
-         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        ],
+
+  signInSuccessUrl: 'http://localhost:1337/lender.html',
+  signInOptions: [
+ // List of OAuth providers supported.
+  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+  ],
   // Other config options... 
-      });
-initApp = function() {
-  firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {  
-   console.log("sdfsaf");
-       // User is signed in.
-    var displayName = user.displayName;
-    var email = user.email;
-    user.getIdToken().then(function(accessToken) {
-    document.getElementById('sign-in-status').textContent = 'Signed in';
-    document.getElementById('sign-in').textContent = 'Sign out';
 });
 
-function login() {
-  console.log("sdfsaf");
+window.onload = function() {
+  alert("hi");
   var db = firebase.firestore(app);
   var docRef = db.collection("Users").doc("michaelhanyy");
   docRef.get().then(function(doc) {
     console.log(doc.data());
-    console.log(doc.get('has_account'));
-
+    alert(doc.get('has_account'));
   });
+};
+
+function login() {
+  alert("hi");
+  var db = firebase.firestore(app);
+  var docRef = db.collection("Users").doc("michaelhanyy");
+  docRef.get().then(function(doc) {
+    console.log(doc.data());
+    alert(doc.get('has_account'));
+  });
+}
+
 function saveUsername(username) {
     sessionStorage.setItem("username", username);
-}
 }
