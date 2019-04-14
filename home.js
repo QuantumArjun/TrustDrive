@@ -39,12 +39,11 @@ function login(user) {
   var db = firebase.firestore(app);
   var docRef = db.collection("Users").doc(user.email);
   docRef.get().then(function(doc) {
+      sessionStorage.setItem("email", user.email);
+      sessionStorage.setItem("name", user.displayName);
     if(!doc.get('has_account')){
       document.location.href = "signUp.html";
     }else{
-      sessionStorage.setItem("email", user.email);
-      console.log()
-      sessionStorage.setItem("name", user.displayName);
       document.location.href = "rider.html"
     }
   });
