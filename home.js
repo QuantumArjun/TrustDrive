@@ -36,12 +36,12 @@ function fb_login() {
 }
 
 function login(user) {
-  alert("hi");
   var db = firebase.firestore(app);
-  var docRef = db.collection("Users").doc("michaelhanyy");
+  var docRef = db.collection("Users").doc(user.email);
+  
   docRef.get().then(function(doc) {
-    console.log(doc.data());
-    alert(doc.get('has_account'));
+    if(doc.get('has_account')) console.log("has acc");
+    else console.log("doesnt has acc");
   });
 }
 
