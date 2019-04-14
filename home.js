@@ -40,9 +40,11 @@ function login(user) {
   var docRef = db.collection("Users").doc(user.email);
   docRef.get().then(function(doc) {
     if(doc.get('has_account')){
-      document.location.href = "http://localhost:1337/rider.html"
+      document.location.href = "rider.html"
     }else{
-      document.location.href = "http://localhost:1337/signUp.html"
+      sessionStorage.setItem("user", user);
+      document.location.href = "signUp.html"
+
       //add to data base
     }
   });
