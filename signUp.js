@@ -3,16 +3,15 @@ var db = firebase.firestore();
 function writeToFirebase() {
     var carModel = document.getElementById("model").value;
     var address = document.getElementById("address").value;
-    var user = sessionStorage.getItem("user").email;
-    var name = sessionStorage.getItem("user").displayName;
-    user = "Ronak";
-    var inUse = false;
+    var email = sessionStorage.getItem("email");
+    var name = sessionStorage.getItem("name");
     var pricePerHour = 7.50;
 
-    db.collection("Users").doc("Ronak").set({
-            carModel: carModel,
-            inUse: inUse,
-            pricePerHour: pricePerHour
+    db.collection("Users").doc(email).set({
+        name: name,
+        has_account: true,
+        carModel: carModel,
+        pricePerHour: pricePerHour
                 })
         .then(function() {
             console.log("Document successfully written!");

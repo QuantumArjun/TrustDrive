@@ -42,7 +42,8 @@ function login(user) {
     if(doc.get('has_account')){
       document.location.href = "rider.html"
     }else{
-      sessionStorage.setItem("user", user);
+      sessionStorage.setItem("email", user.email);
+      sessionStorage.setItem("email", user.displayName);
       document.location.href = "signUp.html"
     }
   });
