@@ -1,3 +1,16 @@
+function updateCars() {
+
+    var car_name = document.getElementById("car-name");
+    car_name.innerHTML = "db";
+
+    var car_model = document.getElementById("car-model");
+    car_name.innerHTML = "db";
+
+    var car_distance = document.getElementById("car-distance");
+    car_name.innerHTML = "db";
+
+}
+
 const smartcar = new Smartcar({
   clientId: '<your-client-id>',
   redirectUri: '<your-redirect-uri>',
