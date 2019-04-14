@@ -6,7 +6,9 @@ var email = sessionStorage.getItem("email");
 var thisUser = Users.doc(sessionStorage.getItem("email"));  
 var clientId = thisUser;
 thisUser.get().then(function(doc) {
-  clientId = doc.get('Client_ID');    
+
+  clientId = doc.get('Client_ID'); 
+  sessionStorage.setItem("clientId", clientId);
 });
 
 function updateCars() {
@@ -24,13 +26,14 @@ function updateCars() {
 
 const smartcar = new Smartcar({
   clientId: clientId,
-  redirectUri: '<your-redirect-uri>',
+  redirectUri: 'https://javascript-sdk.smartcar.com/redirect-2.1.1?app_origin=http://localhost:1337 ',
   scope: ['read_vehicle_info', 'read_odometer'],
   onComplete: function(err, code) {
     if (err) {
       // handle errors from the authorization flow (i.e. user denies access)
     }
     // handle the returned code by sending it to your back-end server
+    alert(code);
     sendToBackend(code);
   },
 });
