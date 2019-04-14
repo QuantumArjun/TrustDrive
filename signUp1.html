@@ -13,26 +13,13 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
     <script src="signUp.js"></script>
 
-    <script type="text/javascript">
-
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDu7MTm-N154EVmrgSV1722ELwe8qSJ220",
-            authDomain: "trust-drive-8c229.firebaseapp.com",
-            databaseURL: "https://trust-drive-8c229.firebaseio.com",
-            projectId: "trust-drive-8c229",
-            storageBucket: "trust-drive-8c229.appspot.com",
-            messagingSenderId: "431444258807"
-        };
-        firebase.initializeApp(config);
-    </script>
 </head>
 <body>
 <div class="container">
     <div class="card">
         <h1>Almost Done!</h1>
         <p>We just have a few more questions for you before you can start making money!</p>
-        <input id="mode" type="text" name="carModel" placeholder="Car Model"><br>
+        <input id="model" type="text" name="carModel" placeholder="Car Model"><br>
         <input id="address" type="text" name="address" placeholder="Street Address"><br>
         <p>Do you want your direct friends (1st order connections) only to drive your car, or are you find with friends of friends (2nd order)?</p>
         <input class="radio" type="radio" name="order" value="first">1st order only
@@ -40,5 +27,18 @@
         <a href="lender.html"><button id= "submit" type="submit" onclick="writeToFirebase()">Submit</button></a>
     </div>
 </div>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDu7MTm-N154EVmrgSV1722ELwe8qSJ220",
+        authDomain: "trust-drive-8c229.firebaseapp.com",
+        databaseURL: "https://trust-drive-8c229.firebaseio.com",
+        projectId: "trust-drive-8c229",
+        storageBucket: "trust-drive-8c229.appspot.com",
+        messagingSenderId: "431444258807"
+    };
+    firebase.initializeApp(config);
+</script>
 </body>
 </html>
