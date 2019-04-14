@@ -13,7 +13,7 @@
 </head>
 
 
-<body onload = "">
+<body onload = "updatePage()">
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -37,10 +37,11 @@ function closeNav() {
 }
 </script>
 
-
 	<div class = "carAvailability">
 		Cars Available
 	</div>
+
+<div id = "overall_container">
 <div class="container">
   <a href = "checkout.html"><button class="card">
     <h3 class="title" id = "car-name">Arjun Karanam</h3>
@@ -49,6 +50,7 @@ function closeNav() {
    </button>
 </a>
 
+</div>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
