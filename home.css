@@ -188,7 +188,7 @@ label[for=user]{
 }
 .card1{
   padding: 5px;
-  margin-bottom: 4em;
+  margin: 0 5em;
   text-align: center;
   background-color: #33383f;
   border: 0;
@@ -200,8 +200,22 @@ button.card1{
   border:0;
   background-color: white;
   color: #33383f;
+  margin: 2em 0.5em;
+  padding: 10px;
+  max-width: 150px;
+  transition-duration: 0.4s;
 }
 #card1 button:hover {
   color: white;
   background-color: #33383f;
+}
+
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+.filler {
+  min-height: 10vh;
 }
