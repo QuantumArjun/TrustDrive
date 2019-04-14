@@ -38,10 +38,13 @@ function fb_login() {
 function login(user) {
   var db = firebase.firestore(app);
   var docRef = db.collection("Users").doc(user.email);
-  
   docRef.get().then(function(doc) {
-    if(doc.get('has_account')) console.log("has acc");
-    else console.log("doesnt has acc");
+    if(doc.get('has_account')){
+      document.location.href = "http://localhost:1337/rider.html"
+    }else{
+      document.location.href = "http://localhost:1337/signUp.html"
+      //add to data base
+    }
   });
 }
 
